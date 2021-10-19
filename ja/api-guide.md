@@ -86,16 +86,14 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
 
 | 이름 | 타입 | 설명 |
 |---|---|---|
-| isSuccessful | Boolean | API 요청 성공 여부 |
+| isSuccessful | Boolean | 분석 API 성공 여부 |
 | resultCode | Integer | 결과 코드 |
-| resultMessage | String | 결과 메시지 |
+| resultMessage | String | 결과 메시지 (성공시 success, 실패시 오류 내용) |
 
 [필드]
 
 | 이름 | 타입 | 설명 |
 |---|---|---|
-| success | Boolean | 분석 성공 여부 |
-| resultMessage | String | 분석 결과 (성공시 success, 실패시 오류 내용) |
 | fileType | String | 파일 확장자 (pdf, jpg, png) |
 | keyValues | List | 인식 결과 목록 |
 | keyValues[0].key | String | 인식 항목명 |
