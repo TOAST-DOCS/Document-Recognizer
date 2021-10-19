@@ -74,8 +74,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
             },
             ...
         ],
-        "resolution": "normal",
-        "timestamp": "2021-09-06_16:47:51"
+        "resolution": "normal"
     }
 }
 ```

@@ -65,8 +65,7 @@
                 },
                 ...
             ],
-            "resolution": "normal",
-            "timestamp": "2021-09-06_16:47:51"
+            "resolution": "normal"
         }
     ```
   
