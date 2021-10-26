@@ -1,41 +1,41 @@
-## AI Service > Document Recognizer > 개요
+## AI Service > Document Recognizer > Overview
 
-Document Recognizer는 NHN Cloud의 OCR(광학 문자 인식) 기술을 통해 사업자등록증의 문자 영역을 인식하고, 영역별 문자를 추출하는 기능을 제공합니다.
-사업자등록증 정보를 데이터베이스에 저장하거나 문서 처리 자동화를 구현하는 고객사에서 활용할 수 있습니다.
+Document Recognizer provides a feature to recognize text areas in business registration certificates and extract text in each area, based on NHN Cloud's optical character recognition (OCR) technology.
+It can be used by customers who need to store business registration certificate information in a database or implement document processing automation.
 
-## 주요 기능
+## Main Features
 
-* **사업자등록증 문자 영역 인식**
-	* 사업자등록증의 문자 영역(bounding box)을 인식하고, 해당 영역의 좌표를 제공합니다.
-	
-* **사업자등록증 주요 데이터 추출 및 분석**
-    * 사업자등록증 분류(개인/법인)에 따른 주요 데이터는 Key/Value 한 쌍으로 분석되며, 결과에 대한 정확도(confidence)를 제공합니다.
+* **Recognition of text areas in a business registration certificate**
+    * Recognizes the text area (bounding box) in a business registration certificate and provides the coordinates of the area.
 
-* **분석 결과 다운로드**
-	* 사업자등록증 파일에서 추출한 결과를 Excel 및 JSON 파일로 다운로드할 수 있습니다.
+* **Extraction and analysis of key data in a business registration certificate**
+    * Key data according to the classification of the business registration certificate (individual/corporate) is analyzed as a key/value pair, and the confidence score for the result is provided.
 
-## 입력 이미지 가이드
-    
-* .pdf, .jpeg, .png 형식의 사업자등록증 이미지 분석 기능을 지원합니다. 
-    * 최대 용량: 5MB
-    * 권장 해상도: 1280 x 720 이상
-* PDF의 경우 단일 페이지에 대한 분석 결과만 제공합니다. (여러 페이지인 경우 첫 페이지에 대한 분석 결과가 제공됩니다.)
-* 평평한 곳에서 최대한 바르게 펴진 상태로 촬영된 이미지를 사용해 주세요.
-* 사각 형태의 가득 찬 이미지로 인식해 주세요.
-* 카메라 플래쉬 등으로 인한 빛 반사나 그늘로 인해 글자가 잘 안 보이는 경우 정확한 Key/Value 추출이 어려울 수 있습니다.
-* 흑백/컬러 이미지에 대해 결과 분석이 가능하지만, 정확한 분석을 위해서 컬러 이미지를 권장합니다.
-* 사업자등록증은 한국어에 한해 분석 결과를 제공합니다.
+* **Analysis results download**
+    * You can download the results extracted from a business registration certificate file as an Excel or JSON file.
 
-## 서비스 대상
-* 사업자등록증을 자동으로 고객사 시스템에 등록하는 경우
-* 문서 처리 자동화를 구현하는 경우
-* 회계/재무 관리 자동화 솔루션을 구축하는 경우
+## Input Image Guide
+
+* This service supports analysis of business registration certificate images in .pdf, .jpeg, .png format.
+    * Maximum size: 5 MB
+    * Recommended resolution: 1280 x 720 or higher
+* For PDF, only the analysis results for a single page is provided. (In case of multiple pages, analysis results for the first page is provided.)
+* Please use an image taken in a condition where the subject has been laid out as straight as possible on a flat surface.
+* Please make the image recognized as a full image of a rectangular shape.
+* It might be difficult to extract the correct key/value if the text is difficult to read due to light reflection or shadows caused by the camera flash, etc.
+* The service supports result analysis for black-and-white and color images, but color images are recommended for accurate analysis.
+* The service provides analysis results for the business registration certificate in Korean only.
+
+## Service Targets
+* When you need to register business registration certificates in the customer's system automatically
+* When you need to implement document processing automation
+* When you need to build an accounting/financial management automation solution
 
 ## Privacy Policy
 * While using the Document Recognizer service, the customer may collect personal and sensitive information of their users. Therefore, the customer of this service must inform a legal notice to their users as per the Personal Information Protection Act and acquire their consent regarding the matter. Also during this process, work consignment relation regarding the processing of personal information may arise between the customer and NHN. The customer who assumes the position of consignor may enter into a consignment contract with the consignee, NHN, separately in writing, and post a privacy policy notice by referencing the following:
     - Consignee: NHN 
     - Consignment Description: Providing Document Recognizer service
-    
+
 ## Agreement on technical/administrative level
 * The customer must fully implement technical and administrative protection measures considering the sensitive nature of information collected/used while using the Document Recognizer service.
 * To receive the information recognized by the Document Recognizer service, the customer must complete the encryption of the communication section before starting to use the Document Recognizer service.

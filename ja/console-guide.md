@@ -18,7 +18,7 @@
 
 画像をアップロードした後、**分析**ボタンをクリックすると、分析結果が画面右側に表示されます。
 
-![Business Registration](http://static.toastoven.net/prod_document_ocr/business_ocr_console_ko.png)
+![Business Registration](http://static.toastoven.net/prod_document_ocr/business_ocr_console_ja.png)
 
 * [テキスト(Key Value)]分析された事業者登録証の内容をKey/Value形式で表示します。
 * [JSON]分析した結果をJSON形式で表示します。
