@@ -18,7 +18,7 @@ Upload the business registration certificate image to be analyzed.
 
 After uploading the image, click the **Analyze** button and the analysis results will appear on the right side of the screen.
 
-![Business Registration](http://static.toastoven.net/prod_document_ocr/business_ocr_console_ko.png)
+![Business Registration](http://static.toastoven.net/prod_document_ocr/business_ocr_console_en.png)
 
 * [Text (Key Value)] Displays the analyzed contents of the business registration certificate in the form of Key/Value.
 * [JSON] Displays the analysis results in JSON format.
