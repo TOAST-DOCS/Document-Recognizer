@@ -1,26 +1,26 @@
-## AI Service > Document Recognizer > API 가이드
+## AI Service > Document Recognizer > APIガイド
 
-### 사업자등록증 분석 API
+### 事業者登録証分析API
 
-#### 요청
+#### リクエスト
 
-- {appKey}와 {secretKey}는 콘솔 상단 **URL & Appkey** 메뉴에서 확인이 가능합니다.
+- {appKey}と{secretKey}はコンソール上部の**URL & Appkey**メニューで確認が可能です。
 
 [URI]
 
-| 메서드 | URI |
+| メソッド | URI |
 |---|---|
 | POST | https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business |
 
-[요청 헤더]
+[リクエストヘッダ]
 
-| 이름 | 값 | 설명 |
+| 名前 | 値 | 説明 |
 |---|---|---|
-| Authorization | {secretKey} | 콘솔에서 발급받은 보안 키 |
+| Authorization | {secretKey} | コンソールで発行されたセキュリティキー |
 
-[요청 본문]
+[リクエスト本文]
 
-- 이미지 파일의 Binary Data를 넣습니다.
+- 画像ファイルのBinary Dataを入れます。
 
 ```
 curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business' \
@@ -28,15 +28,15 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
 -H 'Authorization: ${secretKey}'
 ```
 
-[필드]
+[フィールド]
 
-| 이름 | 타입 | 설명 |
+| 名前 | タイプ | 説明 |
 |---|---|---|
-| image | multipart/form–data | 이미지 파일 |
+| image | multipart/form–data | 画像ファイル |
 
-#### 응답
+#### レスポンス
 
-[응답 본문]
+[レスポンス本文]
 
 ```
 {
@@ -50,12 +50,12 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
         "unitType": "pixel",
         "keyValues": [
             {
-                "key":"구분",
-                "value":" 간이과세자",
+                "key":"区分",
+                "value":"簡易課税者",
                 "conf":0.93
             },
             {
-                "key":"등록번호",
+                "key":"登録番号",
                 "value":"270-06-01309",
                 "conf":1
             },
@@ -79,29 +79,28 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
 }
 ```
 
-[헤더]
+[ヘッダ]
 
-| 이름 | 타입 | 설명 |
+| 名前 | タイプ | 説明 |
 |---|---|---|
-| isSuccessful | Boolean | 분석 API 성공 여부 |
-| resultCode | Integer | 결과 코드 |
-| resultMessage | String | 결과 메시지(성공 시 success, 실패 시 오류 내용) |
+| isSuccessful | Boolean | 分析API成否 |
+| resultCode | Integer | 結果コード |
+| resultMessage | String | 結果メッセージ(成功時はsuccess、失敗時はエラー内容) |
 
-[필드]
+[フィールド]
 
-| 이름 | 타입 | 설명 |
+| 名前 | タイプ | 説明 |
 |---|---|---|
-| fileType | String | 파일 확장자(.pdf, .jpg, .png) |
-| keyValues | List | 인식 결과 목록 |
-| keyValues[0].key | String | 인식 항목명 |
-| keyValues[0].value | String | 인식 내용 |
-| keyValues[0].conf | Double | 인식 결과 신뢰도 |
-| resolution | String | 권장 해상도(HD 1280*720px) 이상이면 normal, 권장 해상도 미만은 low |
-| unitType | String | boxes 좌표 단위(기본 pixel, PDF의 경우 point) |
-| boxes | List | 인식 영역(Bounding box) 좌표 목록 |
-| boxes[0] | Object  | 인식 영역 좌표 { x1, y1, x2, y2, x3, y3, x4, y4 } |
+| fileType | String | ファイル拡張子(.pdf、.jpg、.png) |
+| keyValues | List | 認識結果リスト |
+| keyValues[0].key | String | 認識項目名 |
+| keyValues[0].value | String | 認識内容 |
+| keyValues[0].conf | Double | 認識結果の信頼度 |
+| resolution | String | 推奨解像度(HD 1280*720px)以上の場合はnormal、推奨解像度未満はlow |
+| unitType | String | boxes座標単位(基本pixel、PDFの場合point) |
+| boxes | List | 認識領域(Bounding box)座標リスト |
+| boxes[0] | Object  | 認識領域座標{ x1, y1, x2, y2, x3, y3, x4, y4 } |
 
 * boxes[0]
  
     ![Bounding box](http://static.toastoven.net/prod_document_ocr/bbox.png)
-
