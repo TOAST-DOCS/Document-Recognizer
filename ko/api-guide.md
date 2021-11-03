@@ -46,7 +46,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
         "resultMessage": "SUCCESS"
     },
     "result": {
-        "fileType": "jpg",
+        "fileType": "png",
         "unitType": "pixel",
         "keyValues": [
             {
