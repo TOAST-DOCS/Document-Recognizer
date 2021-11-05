@@ -9,7 +9,7 @@ It can be used by customers who need to store business registration certificate 
     * Recognizes the text area (bounding box) in a business registration certificate and provides the coordinates of the area.
 
 * **Extraction and analysis of key data in a business registration certificate**
-    * Key data according to the classification of the business registration certificate (individual/corporate) is analyzed as a key/value pair, and the confidence score for the result is provided.
+    * Key data according to the classification of the business registration certificate (individual/corporate) is analyzed as a key/value pair, and provides a confidence for it.
 
 * **Analysis results download**
     * You can download the results extracted from a business registration certificate file as an Excel or JSON file.
