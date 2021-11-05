@@ -47,7 +47,7 @@ After uploading the image, click the **Analyze** button and the analysis results
                 },
                 {
                     "key":"등록번호",
-                    "value":"270-06-01309",
+                    "value":"123-45-67890",
                     "conf":1
                 },
                 ...
