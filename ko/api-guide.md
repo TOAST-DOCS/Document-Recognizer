@@ -46,7 +46,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
         "resultMessage": "SUCCESS"
     },
     "result": {
-        "fileType": "jpg",
+        "fileType": "png",
         "unitType": "pixel",
         "keyValues": [
             {
@@ -56,7 +56,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
             },
             {
                 "key":"등록번호",
-                "value":"270-06-01309",
+                "value":"123-45-67890",
                 "conf":1
             },
             ...
