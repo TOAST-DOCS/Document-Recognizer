@@ -49,10 +49,10 @@ It can be used by customers who need to create a database for recognized documen
     * This service supports analysis of business registration certificate images in .pdf, .jpeg, .png format.
     * Maximum size: 5 MB
     * Recommended resolution: 760 x 480 or higher
-* 平らな場所で、できる限り伸ばした状態で撮影された画像を使用してください。
-* 四角形の大きく映った画像で認識してください。
-* カメラのフラッシュなどによる光の反射や影により文字がよく見えない場合、正確なKey/Value抽出が難しくなる場合があります。
-* 白黒/カラー画像の結果分析が可能ですが、正確な分析を行うためにカラーの画像を推奨します。
+* Please use an image taken in a condition where the subject has been laid out as straight as possible on a flat surface.
+* Please make the image recognized as a full image of a rectangular shape.
+* It might be difficult to extract the correct key/value if the text is difficult to read due to light reflection or shadows caused by the camera flash, etc.
+* The service supports result analysis for black-and-white and color images, but color images are recommended for accurate analysis.
 * 세로 방향의 카드인 경우, 세로 카드의 카드 번호와 유효 기간이 정방향인 이미지로 인식해 주세요.
 * 신용카드 분석 이미지 예시
 
