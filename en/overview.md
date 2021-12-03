@@ -1,9 +1,9 @@
 ## AI Service > Document Recognizer > Overview
 
-Document Recognizer는 NHN Cloud의 OCR(광학 문자 인식) 기술을 통해 문서의 문자 영역을 인식하고, 영역별 문자를 추출하는 기능을 제공합니다.
-문서 이미지의 정보를 데이터베이스에 저장하거나 문서 처리 자동화를 구현하는 고객사에서 활용할 수 있습니다.
+Document Recognizer service provides a feature to recognize the text area of a business registration certificate or credit card and extract text for each area, based on NHN Cloud's optical character recognition (OCR) technology. 
+It can be used by customers who need to create a database for recognized documents or implement document processing automation.
 
-## 사업자등록증
+## Business registration certificate
 
 ### Main Features
 
@@ -28,12 +28,7 @@ Document Recognizer는 NHN Cloud의 OCR(광학 문자 인식) 기술을 통해 �
 * The service supports result analysis for black-and-white and color images, but color images are recommended for accurate analysis.
 * The service provides analysis results for the business registration certificate in Korean only.
 
-### Service Targets
-* When you need to register business registration certificates in the customer's system automatically
-* When you need to implement document processing automation
-* When you need to build an accounting/financial management automation solution
-
-## 신용카드
+## Credit card
 
 ### Main Features
 
@@ -62,6 +57,11 @@ Document Recognizer는 NHN Cloud의 OCR(광학 문자 인식) 기술을 통해 �
 * 신용카드 분석 이미지 예시
 
 ![Image Example](http://static.toastoven.net/prod_document_ocr/CreditCardOCR_ex_img_en.png)
+
+## Service Targets
+* When you need to register documents (business registration certificate, credit card) in the customer's system automatically
+* When you need to implement document processing automation
+* When you need to build an accounting/financial management automation solution
 
 ## Privacy Policy
 * While using the Document Recognizer service, the customer may collect personal and sensitive information of their users. Therefore, the customer of this service must inform a legal notice to their users as per the Personal Information Protection Act and acquire their consent regarding the matter. Also during this process, work consignment relation regarding the processing of personal information may arise between the customer and NHN. The customer who assumes the position of consignor may enter into a consignment contract with the consignee, NHN, separately in writing, and post a privacy policy notice by referencing the following:
