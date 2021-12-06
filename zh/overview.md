@@ -56,7 +56,7 @@ It can be used by customers who need to create a database for recognized documen
 * 세로 방향의 카드인 경우, 세로 카드의 카드 번호와 유효 기간이 정방향인 이미지로 인식해 주세요.
 * 신용카드 분석 이미지 예시
 
-![Image Example](http://static.toastoven.net/prod_document_ocr/CreditCardOCR_ex_img_en.png)
+![Image Example](http://static.toastoven.net/prod_document_ocr/DocumentRecognizer_ex_img_en.png)
 
 ## Service Targets
 * When you need to register documents (business registration certificate, credit card) in the customer's system automatically

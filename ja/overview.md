@@ -55,7 +55,7 @@ Document Recognizerサービスは、NHN CloudのOCR(光学文字認識)技術�
 * 세로 방향의 카드인 경우, 세로 카드의 카드 번호와 유효 기간이 정방향인 이미지로 인식해 주세요.
 * 신용카드 분석 이미지 예시
 
-![Image Example](http://static.toastoven.net/prod_document_ocr/CreditCardOCR_ex_img_ja.png)
+![Image Example](http://static.toastoven.net/prod_document_ocr/DocumentRecognizer_ex_img_jp.png)
 
 ## サービス対象
 * 文書(事業者登録証およびクレジットカード)を自動的にお客様の会社のシステムに登録する場合
