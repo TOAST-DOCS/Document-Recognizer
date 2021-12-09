@@ -87,19 +87,19 @@ After uploading the image, click the **Analyze** button and the analysis results
 
 사진을 업로드한 후 **분석** 버튼을 클릭하면 분석 결과가 화면 오른쪽에 나타납니다.
 
-![Business Registration](http://static.toastoven.net/prod_document_ocr/credit_card_ocr_console_en.png)
+![Credit Card](http://static.toastoven.net/prod_document_ocr/credit_card_ocr_console_en.png)
 
 * [텍스트(Key Value)] 분석된 신용카드의 내용을 Key/Value 형태로 표시합니다.
 * [JSON] 분석한 결과를 JSON 형태로 표시합니다.
     * [fileType] 파일 확장자(.jpg, .png)
-    * [resolution] 권장 해상도(HD 760*480px) 이상이면 normal, 권장 해상도 미만은 low
+    * [resolution] 권장 해상도(760*480px) 이상이면 normal, 권장 해상도 미만은 low
     * [cardNums] 카드 번호 분석 결과 목록
         * [value] 카드 번호 인식 결과
-        * [conf] 유효 기간 인식 결과 신뢰도
+        * [conf] 카드 번호 인식 결과 신뢰도
     * [totalCardNum] 카드 번호 전체 인식 결과
     * [validThru] 유효 기간 인식 내용
-            * [value] 유효 기간 인식 결과
-            * [conf] 유효 기간 인식 결과 신뢰도
+        * [value] 유효 기간 인식 결과
+        * [conf] 유효 기간 인식 결과 신뢰도
     * [cardNumBoxes] 카드 번호 인식 영역에 대한 이미지 상의 좌표값(box 별 {x1, y1, x2, y2, x3, y3, x4, y4} 형태)
     * [validThruBox] 유효 기간 인식 영역에 대한 이미지 상의 좌표값
         ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)

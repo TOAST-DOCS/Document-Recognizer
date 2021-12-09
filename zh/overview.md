@@ -3,7 +3,7 @@
 Document Recognizer service provides a feature to recognize the text area of a business registration certificate or credit card and extract text for each area, based on NHN Cloud's optical character recognition (OCR) technology. 
 It can be used by customers who need to create a database for recognized documents or implement document processing automation.
 
-## Business registration certificate
+## Business registration certificate Analysis
 
 ### Main Features
 
@@ -18,6 +18,8 @@ It can be used by customers who need to create a database for recognized documen
 
 ### Input Image Guide
 
+보다 정확한 사업자등록증 분석을 위해 아래의 가이드를 참고 바랍니다.
+
 * This service supports analysis of business registration certificate images in .pdf, .jpeg, .png format.
     * Maximum size: 5 MB
     * Recommended resolution: 1280 x 720 or higher
@@ -28,7 +30,7 @@ It can be used by customers who need to create a database for recognized documen
 * The service supports result analysis for black-and-white and color images, but color images are recommended for accurate analysis.
 * The service provides analysis results for the business registration certificate in Korean only.
 
-## Credit card
+## Credit card Analysis
 
 ### Main Features
 
