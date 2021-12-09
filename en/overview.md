@@ -3,22 +3,22 @@
 Document Recognizer service provides a feature to recognize the text area of a business registration certificate or credit card and extract text for each area, based on NHN Cloud's optical character recognition (OCR) technology. 
 It can be used by customers who need to create a database for recognized documents or implement document processing automation.
 
-## Business registration certificate Analysis
+## Business Registration Certificate Analysis
 
 ### Main Features
 
 * **Recognition of text areas in a business registration certificate**
-    * Recognizes the text area (bounding box) in a business registration certificate and provides the coordinates of the area.
+    * Recognizes the text areas (bounding boxes) in a business registration certificate and provides the coordinates of the areas.
 
 * **Extraction and analysis of key data in a business registration certificate**
     * Key data according to the classification of the business registration certificate (individual/corporate) is analyzed as a key/value pair, and provides a confidence for it.
 
 * **Analysis results download**
-    * You can download the results extracted from a business registration certificate file as an Excel or JSON file.
+    * You can download the results extracted from a business registration certificate image file as an Excel or JSON file.
 
 ### Input Image Guide
 
-보다 정확한 사업자등록증 분석을 위해 아래의 가이드를 참고 바랍니다.
+For more accurate business registration analysis, please refer to the guide below.
 
 * This service supports analysis of business registration certificate images in .pdf, .jpeg, .png format.
     * Maximum size: 5 MB
@@ -30,33 +30,33 @@ It can be used by customers who need to create a database for recognized documen
 * The service supports result analysis for black-and-white and color images, but color images are recommended for accurate analysis.
 * The service provides analysis results for the business registration certificate in Korean only.
 
-## Credit card Analysis
+## Credit Card Analysis
 
 ### Main Features
 
-* **신용카드 문자 영역 인식**
-	* 신용카드 이미지의 카드 번호, 유효 기간 문자 영역(bounding box)을 인식하고, 해당 영역의 좌표를 제공합니다.
-	
-* **신용카드 주요 데이터 추출 및 분석**
-    * 신용카드 이미지의 카드 번호, 유효 기간 정보와 이에 대한 신뢰값(confidence)을 제공합니다.
+* **Recognition of text areas in a credit card**
+    * Recognizes the text areas (bounding boxes) of card number and expiration date in a credit card image and provides the coordinates of the areas.
 
-* **분석 결과 다운로드**
-	* 신용카드 이미지 파일에서 추출한 결과를 JSON 파일로 다운로드할 수 있습니다.
+* **Extraction and analysis of key data in a credit card**
+    * Provides card number and expiration date information in the credit card image, as well as confidence for the information.
+
+* **Analysis results download**
+    * You can download the results extracted from a credit card image file as a JSON file.
 
 ### Input Image Guide
 
-보다 정확한 신용카드 분석을 위해 아래의 가이드를 참고 바랍니다.
+For more accurate credit card analysis, please refer to the guide below.
 
-* 파일 권장 사항
-    * This service supports analysis of business registration certificate images in .pdf, .jpeg, .png format.
+* File recommendations
+    * File format: Supports analysis of images in .jpeg, .png format.
     * Maximum size: 5 MB
-    * Recommended resolution: 760 x 480 or higher
+    * Recommended resolution: 760 x 480
 * Please use an image taken in a condition where the subject has been laid out as straight as possible on a flat surface.
 * Please make the image recognized as a full image of a rectangular shape.
 * It might be difficult to extract the correct key/value if the text is difficult to read due to light reflection or shadows caused by the camera flash, etc.
 * The service supports result analysis for black-and-white and color images, but color images are recommended for accurate analysis.
-* 세로 방향의 카드인 경우, 세로 카드의 카드 번호와 유효 기간이 정방향인 이미지로 인식해 주세요.
-* 신용카드 분석 이미지 예시
+* If the card is a vertical card, use an image with the card number and expiration date of the vertical card in the correct orientation for recognition.
+* Credit card analysis image example
 
 ![Image Example](http://static.toastoven.net/prod_document_ocr/DocumentRecognizer_ex_img_en.png)
 
@@ -67,7 +67,7 @@ It can be used by customers who need to create a database for recognized documen
 
 ## Privacy Policy
 * While using the Document Recognizer service, the customer may collect personal and sensitive information of their users. Therefore, the customer of this service must inform a legal notice to their users as per the Personal Information Protection Act and acquire their consent regarding the matter. Also during this process, work consignment relation regarding the processing of personal information may arise between the customer and NHN. The customer who assumes the position of consignor may enter into a consignment contract with the consignee, NHN, separately in writing, and post a privacy policy notice by referencing the following:
-    - Consignee: NHN 
+    - Consignee: NHN
     - Consignment Description: Providing Document Recognizer service
 
 ## Agreement on technical/administrative level
