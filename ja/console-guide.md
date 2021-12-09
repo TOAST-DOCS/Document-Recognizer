@@ -88,19 +88,19 @@
 
 画像をアップロードした後、**分析**ボタンをクリックすると分析結果が画面右側に表示されます。
 
-![Business Registration](http://static.toastoven.net/prod_document_ocr/credit_card_ocr_console_ja.png)
+![Credit Card](http://static.toastoven.net/prod_document_ocr/credit_card_ocr_console_ja.png)
 
 * [テキスト(Key Value)]分析されたクレジットカードの内容をKey/Value形式で表示します。
 * [JSON]分析した結果をJSON形式で表示します。
     * [fileType]ファイル拡張子(.jpg, .png)
-    * [resolution]推奨解像度(HD 760*480px)以上の場合はnormal、推奨解像度未満はlow
+    * [resolution]推奨解像度(760*480px)以上の場合はnormal、推奨解像度未満はlow
     * [cardNums]カード番号分析結果リスト
         * [value]カード番号認識結果
-        * [conf]有効期限認識結果の信頼度
+        * [conf]カード番号認識結果の信頼度
     * [totalCardNum]カード番号全体認識結果
     * [validThru]有効期限認識内容
-            * [value]有効期限認識結果
-            * [conf]有効期限認識結果の信頼度
+        * [value]有効期限認識結果
+        * [conf]有効期限認識結果の信頼度
     * [cardNumBoxes]カード番号認識領域の画像上の座標値(box別{x1, y1, x2, y2, x3, y3, x4, y4}形式)
     * [validThruBox]有効期限認識領域の画像上の座標値
         ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)

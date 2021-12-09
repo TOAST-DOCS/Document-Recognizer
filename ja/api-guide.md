@@ -217,7 +217,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/credit-c
 | 名前 | タイプ | 説明 |
 |---|---|---|
 | fileType | String | ファイル拡張子(.jpg, .png) |
-| resolution | String | 推奨解像度(HD 760*480px)以上の場合はnormal、推奨解像度未満はlow |
+| resolution | String | 推奨解像度(760*480px)以上の場合はnormal、推奨解像度未満はlow |
 | cardNums | List | カード番号認識結果リスト |
 | cardNums[0].value | String | 認識結果 |
 | cardNums[0].conf | Double | 認識結果の信頼度 |
