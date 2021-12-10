@@ -20,7 +20,8 @@ It can be used by customers who need to create a database for recognized documen
 
 보다 정확한 사업자등록증 분석을 위해 아래의 가이드를 참고 바랍니다.
 
-* This service supports analysis of business registration certificate images in .pdf, .jpeg, .png format.
+* 파일 권장 사항
+    * This service supports analysis of business registration certificate images in .pdf, .jpeg, .png format.
     * Maximum size: 5 MB
     * Recommended resolution: 1280 x 720 or higher
 * For PDF, only the analysis results for a single page is provided. (In case of multiple pages, analysis results for the first page is provided.)

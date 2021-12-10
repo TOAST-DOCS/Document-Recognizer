@@ -102,8 +102,7 @@ After uploading the image, click the **Analyze** button and the analysis results
         * [conf] 유효 기간 인식 결과 신뢰도
     * [cardNumBoxes] 카드 번호 인식 영역에 대한 이미지 상의 좌표값(box 별 {x1, y1, x2, y2, x3, y3, x4, y4} 형태)
     * [validThruBox] 유효 기간 인식 영역에 대한 이미지 상의 좌표값
-        ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
-
+![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
     ```
     {
