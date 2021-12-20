@@ -103,8 +103,7 @@
         * [conf]有効期限認識結果の信頼度
     * [cardNumBoxes]カード番号認識領域の画像上の座標値(box別{x1, y1, x2, y2, x3, y3, x4, y4}形式)
     * [validThruBox]有効期限認識領域の画像上の座標値
-        ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
-
+![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
     ```
     {

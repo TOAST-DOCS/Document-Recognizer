@@ -102,8 +102,7 @@ After uploading the image, click the **Analyze** button and the analysis results
         * [conf] Confidence of expiration date recognition result
     * [cardNumBoxes] Coordinate values of the card number recognition area on the image ({x1, y1, x2, y2, x3, y3, x4, y4} format for each box)
     * [validThruBox] Coordinate values of the expiration date recognition area on the image
-        ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
-
+![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
     ```
     {
