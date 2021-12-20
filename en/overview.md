@@ -1,22 +1,27 @@
 ## AI Service > Document Recognizer > Overview
 
-Document Recognizer provides a feature to recognize text areas in business registration certificates and extract text in each area, based on NHN Cloud's optical character recognition (OCR) technology.
-It can be used by customers who need to store business registration certificate information in a database or implement document processing automation.
+Document Recognizer service provides a feature to recognize the text area of a business registration certificate or credit card and extract text for each area, based on NHN Cloud's optical character recognition (OCR) technology. 
+It can be used by customers who need to create a database for recognized documents or implement document processing automation.
 
-## Main Features
+## Business Registration Certificate Analysis
+
+### Main Features
 
 * **Recognition of text areas in a business registration certificate**
-    * Recognizes the text area (bounding box) in a business registration certificate and provides the coordinates of the area.
+    * Recognizes the text areas (bounding boxes) in a business registration certificate and provides the coordinates of the areas.
 
 * **Extraction and analysis of key data in a business registration certificate**
     * Key data according to the classification of the business registration certificate (individual/corporate) is analyzed as a key/value pair, and provides a confidence for it.
 
 * **Analysis results download**
-    * You can download the results extracted from a business registration certificate file as an Excel or JSON file.
+    * You can download the results extracted from a business registration certificate image file as an Excel or JSON file.
 
-## Input Image Guide
+### Input Image Guide
 
-* This service supports analysis of business registration certificate images in .pdf, .jpeg, .png format.
+For more accurate business registration analysis, please refer to the guide below.
+
+* 파일 권장 사항
+    * This service supports analysis of business registration certificate images in .pdf, .jpeg, .png format.
     * Maximum size: 5 MB
     * Recommended resolution: 1280 x 720 or higher
 * For PDF, only the analysis results for a single page is provided. (In case of multiple pages, analysis results for the first page is provided.)
@@ -26,14 +31,44 @@ It can be used by customers who need to store business registration certificate 
 * The service supports result analysis for black-and-white and color images, but color images are recommended for accurate analysis.
 * The service provides analysis results for the business registration certificate in Korean only.
 
+## Credit Card Analysis
+
+### Main Features
+
+* **Recognition of text areas in a credit card**
+    * Recognizes the text areas (bounding boxes) of card number and expiration date in a credit card image and provides the coordinates of the areas.
+
+* **Extraction and analysis of key data in a credit card**
+    * Provides card number and expiration date information in the credit card image, as well as confidence for the information.
+
+* **Analysis results download**
+    * You can download the results extracted from a credit card image file as a JSON file.
+
+### Input Image Guide
+
+For more accurate credit card analysis, please refer to the guide below.
+
+* File recommendations
+    * File format: Supports analysis of images in .jpeg, .png format.
+    * Maximum size: 5 MB
+    * Recommended resolution: 760 x 480
+* Please use an image taken in a condition where the subject has been laid out as straight as possible on a flat surface.
+* Please make the image recognized as a full image of a rectangular shape.
+* It might be difficult to extract the correct key/value if the text is difficult to read due to light reflection or shadows caused by the camera flash, etc.
+* The service supports result analysis for black-and-white and color images, but color images are recommended for accurate analysis.
+* If the card is a vertical card, use an image with the card number and expiration date of the vertical card in the correct orientation for recognition.
+* Credit card analysis image example
+
+![Image Example](http://static.toastoven.net/prod_document_ocr/DocumentRecognizer_ex_img_en.png)
+
 ## Service Targets
-* When you need to register business registration certificates in the customer's system automatically
+* When you need to register documents (business registration certificate, credit card) in the customer's system automatically
 * When you need to implement document processing automation
 * When you need to build an accounting/financial management automation solution
 
 ## Privacy Policy
 * While using the Document Recognizer service, the customer may collect personal and sensitive information of their users. Therefore, the customer of this service must inform a legal notice to their users as per the Personal Information Protection Act and acquire their consent regarding the matter. Also during this process, work consignment relation regarding the processing of personal information may arise between the customer and NHN. The customer who assumes the position of consignor may enter into a consignment contract with the consignee, NHN, separately in writing, and post a privacy policy notice by referencing the following:
-    - Consignee: NHN 
+    - Consignee: NHN
     - Consignment Description: Providing Document Recognizer service
 
 ## Agreement on technical/administrative level
