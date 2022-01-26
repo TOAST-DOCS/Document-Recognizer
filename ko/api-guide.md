@@ -24,7 +24,7 @@
 
 ```
 curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business' \
--F 'image=@sample.png' 
+-F 'image=@sample.png' \
 -H 'Authorization: ${secretKey}'
 ```
 
@@ -129,7 +129,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
 
 ```
 curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/credit-card' \
--F 'image=@sample.png' 
+-F 'image=@sample.png' \
 -H 'Authorization: ${secretKey}'
 ```
 
