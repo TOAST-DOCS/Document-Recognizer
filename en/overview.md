@@ -20,7 +20,7 @@ It can be used by customers who need to create a database for recognized documen
 
 For more accurate business registration analysis, please refer to the guide below.
 
-* 파일 권장 사항
+* File recommendations
     * This service supports analysis of business registration certificate images in .pdf, .jpeg, .png format.
     * Maximum size: 5 MB
     * Recommended resolution: 1280 x 720 or higher
