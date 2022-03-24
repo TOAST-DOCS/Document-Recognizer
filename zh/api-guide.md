@@ -105,27 +105,27 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
 
     ![Bounding box](http://static.toastoven.net/prod_document_ocr/bbox.png)
 
-### 신용카드 분석 API
+### Credit Card Analysis API
 
-#### 요청
+#### Request
 
-- {appKey}와 {secretKey}는 콘솔 상단 **URL & Appkey** 메뉴에서 확인이 가능합니다.
+- You can check the {appKey} and {secretKey} in the **URL & Appkey** menu at the top of the console.
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 |---|---|
 | POST | https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/credit-card |
 
-[요청 헤더]
+[Request Header]
 
-| 이름 | 값 | 설명 |
+| Name | Value | Description |
 |---|---|---|
-| Authorization | {secretKey} | 콘솔에서 발급받은 보안 키 |
+| Authorization | {secretKey} | Security key issued from the console |
 
-[요청 본문]
+[Request Body]
 
-- 이미지 파일의 Binary Data를 넣습니다.
+- Put binary data of the image file.
 
 ```
 curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/credit-card' \
@@ -133,15 +133,15 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/credit-c
 -H 'Authorization: ${secretKey}'
 ```
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| image | multipart/form–data | 이미지 파일 |
+| image | multipart/form–data | Image file |
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```
 {
@@ -204,29 +204,29 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/credit-c
 }
 ```
 
-[헤더]
+[Header]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| isSuccessful | Boolean | 분석 API 성공 여부 |
-| resultCode | Integer | 결과 코드 |
-| resultMessage | String | 결과 메시지(성공 시 success, 실패 시 오류 내용) |
+| isSuccessful | Boolean | Analysis API success or not |
+| resultCode | Integer | Result code |
+| resultMessage | String | Result message (success on success, error details on failure) |
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 |---|---|---|
-| fileType | String | 파일 확장자(.jpg, .png) |
-| resolution | String | 권장 해상도(760*480px) 이상이면 normal, 권장 해상도 미만은 low |
-| cardNums | List | 카드 번호 인식 결과 목록 |
-| cardNums[0].value | String | 인식 결과 |
-| cardNums[0].conf | Double | 인식 결과 신뢰도 |
-| totalCardNum | List | 카드 번호 전체 인식 결과 |
-| cardNumBoxes | List | 카드 번호 인식 영역(Bounding box) 좌표 목록 |
-| cardNumBoxes[0] | Object  | 인식 영역 좌표 { x1, y1, x2, y2, x3, y3, x4, y4 } |
-| validThru.value | String | 유효 기간 인식 내용 |
-| validThru.conf | Double | 유효 기간 인식 결과 신뢰도 |
-| validThruBox | Object  | 유효 기간 인식 영역 좌표 { x1, y1, x2, y2, x3, y3, x4, y4 } |
+| fileType | String | File extension (.jpg, .png) |
+| resolution | String | normal: the resolution is the recommended resolution (760*480px) or above, low: the resolution is below the recommended resolution |
+| cardNums | List | List of card number recognition results |
+| cardNums[0].value | String | Recognition result |
+| cardNums[0].conf | Double | Confidence of the recognition result |
+| totalCardNum | List | Full card number recognition result |
+| cardNumBoxes | List | List of coordinates of the card number recognition area (bounding box) |
+| cardNumBoxes[0] | Object  | Coordinates of recognized area { x1, y1, x2, y2, x3, y3, x4, y4 } |
+| validThru.value | String | Expiration date recognition content |
+| validThru.conf | Double | Confidence of expiration date recognition result |
+| validThruBox | Object  | Coordinates of the expiration date recognition area { x1, y1, x2, y2, x3, y3, x4, y4 } |
 
 * boxes[0]
  
