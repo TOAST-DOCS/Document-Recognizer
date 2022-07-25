@@ -1,5 +1,9 @@
 ## AI Service > Document Recognizer > Release Notes
 
+### July 26, 2022
+* Improved the performance of credit card recognition
+* Improved the speed of credit card recognition
+
 ### May 24, 2022
 * Improved the service so that it can recognize credit card images taken at an angle
 
