@@ -2,9 +2,9 @@
 
 ## v2.0 API 소개
 
-### v1.0과 달라진점
+### v1.0과 달라진 점
 
-1. 전자봉투 방식으로 보안이 강화되었습니다.
+1. 전자 봉투 방식으로 보안이 강화되었습니다.
 
 ### 도메인
 
@@ -15,19 +15,19 @@
 ### 사전 준비(AppKey, SecretKey)
 
 * API를 사용하려면 AppKey와 SecretKey가 필요합니다.
-* {appKey}와 {secretKey}는 콘솔 상단 **URL & Appkey** 메뉴에서 확인이 가능합니다.
+* {appKey}와 {secretKey}는 콘솔 상단 **URL & Appkey** 메뉴에서 확인할 수 있습니다.
 
 ### 주의 사항
 
-* 요청, 응답시 BASE64 인코딩 여부를 확인해주세요.
-* 암호화, 복호화의 상세 모드(예: ES-256/CBC/PKCS7Pad)를 확인해주세요.
-* 암호화에 사용되는 대칭키는 반드시 32bit 난수로 생성합니다.
+* 요청, 응답 시 BASE64 인코딩 여부를 확인하십시오.
+* 암호화, 복호화의 상세 모드(예: AES-256/CBC/PKCS7Pad)를 확인하십시오.
+* 암호화에 사용되는 대칭 키는 반드시 32bit 난수로 생성합니다.
 
-## 공개키 발급
+## 공개 키 발급
 
 #### 요청
 
-* {appKey}와 {secretKey}는 콘솔 상단 **URL & Appkey** 메뉴에서 확인이 가능합니다.
+* {appKey}와 {secretKey}는 콘솔 상단 **URL & Appkey** 메뉴에서 확인할 수 있습니다.
 
 [URI]
 
@@ -37,13 +37,13 @@
 
 [요청 헤더]
 
-| 이름 | 값 | 설명 |
-| --- | --- | --- |
-| Authorization | {secretKey} | 콘솔에서 발급받은 보안 키 |
+| 이름 | 값 | 설명              |
+| --- | --- |-----------------|
+| Authorization | {secretKey} | 콘솔에서 발급 받은 보안 키 |
 
 [요청 본문]
 
-* 이미지 파일의 Binary Data를 입력합니.
+* 이미지 파일의 Binary Data를 입력합니다.
 
 ```
 curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-keys/credit-card' \
@@ -78,13 +78,13 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-k
 
 [필드]
 
-| 이름 | 타입 | 설명 |
-| --- | --- | --- |
-| result | Object | 암호화에 필요한 공개키 |
-| result.key | String | 공개키(Base64로 인코딩됨) |
-| result.version | String | 공개키의 버전 |
+| 이름 | 타입 | 설명                 |
+| --- | --- |--------------------|
+| result | Object | 암호화에 필요한 공개 키      |
+| result.key | String | 공개 키(Base64로 인코딩됨) |
+| result.version | String | 공개 키의 버전           |
 
-* 공개키는 **Base64**로 인코딩된 상태입니다.
+* 공개 키는 **Base64**로 인코딩된 상태입니다.
 
 ## 신용카드 API
 
@@ -92,7 +92,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-k
 
 #### 요청
 
-* {appKey}와 {secretKey}는 콘솔 상단 **URL & Appkey** 메뉴에서 확인이 가능합니다.
+* {appKey}와 {secretKey}는 콘솔 상단 **URL & Appkey** 메뉴에서 확인할 수 있습니다.
 
 [URI]
 
@@ -102,23 +102,23 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-k
 
 [요청 헤더]
 
-| 이름 | 값 | 설명 |
-| --- | --- | --- |
-| Authorization | {secretKey} | 콘솔에서 발급받은 보안 키 |
-| X-Key-Version | {x-key-version} | 발급받은 퍼블릭 키의 버전 |
-| Symmetric-Key | {symmetricKey} | 발급받은 퍼블릭 키로 암호화된 대칭키 |
+| 이름 | 값 | 설명                  |
+| --- | --- |---------------------|
+| Authorization | {secretKey} | 콘솔에서 발급 받은 보안 키     |
+| X-Key-Version | {x-key-version} | 발급 받은 퍼블릭 키의 버전     |
+| Symmetric-Key | {symmetricKey} | 발급 받은 공개 키로 암호화된 대칭키 |
 
 * {symmetricKey}는 반드시 **32bit 난수**로 생성해야 합니다.
-* {symmetricKey}는 반드시 **RSA/ECB/PKCS1Padding** 방식으로 암호화 되어야합니다.(PublicKey 이용)
+* {symmetricKey}는 반드시 **RSA/ECB/PKCS1Padding** 방식으로 암호화되어야 합니다(공개 키 이용).
 
 [필드]
 
-| 이름 | 타입 | 설명 | 암호화 설명 |
-| --- | --- | --- | --- |
-| image | multipart/form–data | 이미지 파일 | 대칭키로 암호화된 이미지 |
+| 이름 | 타입 | 설명 | 암호화 설명         |
+| --- | --- | --- |----------------|
+| image | multipart/form–data | 이미지 파일 | 대칭 키로 암호화된 이미지 |
 
-* 이미지 파일은 반드시 **AES-256/CBC/PKCS7Padding** 방식으로 암호화 되어야합니다.(SymmetricKey 이용)
-* 대칭키로 암호화된 이미지 파일의 Binary Data를 **Base64**로 인코딩하여 입력합니다.
+* 이미지 파일은 반드시 **AES-256/CBC/PKCS7Padding** 방식으로 암호화되어야 합니다(대칭 키 이용).
+* 대칭 키로 암호화된 이미지 파일의 바이너리 데이터를 **Base64**로 인코딩하여 입력합니다.
 
 [요청 본문]
 
@@ -219,7 +219,7 @@ curl -X POST '[https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/credit-
 | validThru.conf | Double | 유효 기간 인식 결과 신뢰도 |  |
 | validThruBox | Object | 유효 기간 인식 영역 좌표 { x1, y1, x2, y2, x3, y3, x4, y4 } |  |
 
-* 암호화된 항목들(cardNums[0].value, totalCardNum등)은 **AES-256/CBC/PKCS7Padding** 방식으로 암호화 되어 있습니다.(Symmetric Key 이용)
+* 암호화된 항목들(cardNums[0].value, totalCardNum등)은 **AES-256/CBC/PKCS7Padding** 방식으로 암호화되어 있습니다(대칭 키 이용).
 
 * boxes[0]
   ![Bounding box](http://static.toastoven.net/prod_document_ocr/bbox.png)
