@@ -1,29 +1,29 @@
 ## AI Service > Document Recognizer > API v2.0 가이드
 
-## v2.0 API 소개
+### v2.0 API 소개
 
-### v1.0과 달라진 점
+#### v1.0과 달라진 점
 
 1. 전자 봉투 방식으로 보안이 강화되었습니다.
 
-### 도메인
+#### 도메인
 
 | 이름 | 도메인 |
 | --- | --- |
 | OCR Public API 도메인 | [https://ocr.api.nhncloudservice.com](https://ocr.api.nhncloudservice.com) |
 
-### 사전 준비(AppKey, SecretKey)
+#### 사전 준비(AppKey, SecretKey)
 
 * API를 사용하려면 AppKey와 SecretKey가 필요합니다.
 * {appKey}와 {secretKey}는 콘솔 상단 **URL & Appkey** 메뉴에서 확인할 수 있습니다.
 
-### 주의 사항
+#### 주의 사항
 
 * 요청, 응답 시 Base64 인코딩 여부를 확인하십시오.
 * 암호화, 복호화의 상세 모드(예: AES-256/CBC/PKCS7Padding)를 확인하십시오.
 * 암호화에 사용되는 대칭 키는 반드시 32byte 난수로 생성합니다.
 
-## 공개 키 발급
+### 공개 키 발급
 
 #### 요청
 
@@ -84,9 +84,9 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-k
 
 * 공개 키는 **Base64**로 인코딩된 상태입니다.
 
-## 신용카드 API
+### 신용카드 API
 
-### 신용카드 분석 API
+#### 신용카드 분석 API
 
 #### 요청
 
