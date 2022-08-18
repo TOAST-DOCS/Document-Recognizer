@@ -21,7 +21,7 @@
 
 * 요청, 응답 시 Base64 인코딩 여부를 확인하십시오.
 * 암호화, 복호화의 상세 모드(예: AES-256/CBC/PKCS7Padding)를 확인하십시오.
-* 암호화에 사용되는 대칭 키는 반드시 32bit 난수로 생성합니다.
+* 암호화에 사용되는 대칭 키는 반드시 32byte 난수로 생성합니다.
 
 ## 공개 키 발급
 
@@ -32,8 +32,8 @@
 [URI]
 
 | 메서드 | URI |
-| --- | --- |
-| POST | /v2.0/appkeys/{appKey}/public-keys/credit-card |
+|-----| --- |
+| GET | /v2.0/appkeys/{appKey}/public-keys/credit-card |
 
 [요청 헤더]
 
@@ -42,8 +42,6 @@
 | Authorization | {secretKey} | 콘솔에서 발급 받은 보안 키 |
 
 [요청 본문]
-
-* 이미지 파일의 바이너리 데이터를 입력합니다.
 
 ```
 curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-keys/credit-card' \
@@ -108,7 +106,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-k
 | X-Key-Version | {x-key-version} | 발급 받은 공개 키의 버전        |
 | Symmetric-Key | {symmetricKey} | 발급 받은 공개 키로 암호화된 대칭 키 |
 
-* {symmetricKey}는 반드시 **32bit 난수**로 생성해야 합니다.
+* {symmetricKey}는 반드시 **32byte 난수**로 생성해야 합니다.
 * {symmetricKey}는 반드시 **RSA/ECB/PKCS1Padding** 방식으로 암호화되어야 합니다(공개 키 이용).
 
 [필드]
@@ -118,7 +116,6 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-k
 | image | multipart/form–data | 이미지 파일 | 대칭 키로 암호화된 이미지 |
 
 * 이미지 파일은 반드시 **AES-256/CBC/PKCS7Padding** 방식으로 암호화되어야 합니다(대칭 키 이용).
-* 대칭 키로 암호화된 이미지 파일의 바이너리 데이터를 **Base64**로 인코딩하여 입력합니다.
 
 [요청 본문]
 
