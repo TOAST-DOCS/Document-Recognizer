@@ -1,5 +1,8 @@
 ## AI Service > Document Recognizer > Release Notes
 
+### August 23, 2022
+* Credit Card Analysis API v2.0 released
+
 ### July 26, 2022
 * Improved the performance of credit card recognition
 * Improved the speed of credit card recognition
