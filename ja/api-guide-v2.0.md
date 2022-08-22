@@ -1,29 +1,29 @@
 ## AI Service > Document Recognizer > API v2.0ガイド
 
-## v2.0 API紹介
+### v2.0 API紹介
 
-### v1.0と違なる点
+#### v1.0と違なる点
 
 1. セキュリティがデジタルエンベロープ方式に強化されました。
 
-### ドメイン
+#### ドメイン
 
 | 名前 | ドメイン |
 | --- | --- |
 | OCR Public APIドメイン | [https://ocr.api.nhncloudservice.com](https://ocr.api.nhncloudservice.com) |
 
-### 事前準備(AppKey, SecretKey)
+#### 事前準備(AppKey, SecretKey)
 
 * APIを使用するにはAppKeyとSecretKeyが必要です。
 * {appKey}と{secretKey}はコンソール上部の**URL & Appkey** メニューで確認できます。
 
-### 注意事項
+#### 注意事項
 
 * リクエスト、レスポンス時にBase64エンコードされているかどうかを確認してください。
 * 暗号化、復号の詳細モード(例：AES-256/CBC/PKCS7Padding)を確認してください。
-* 暗号化に使用される対称鍵は、必ず32bit乱数で作成します。
+* 暗号化に使用される対称鍵は、必ず32byte乱数で作成します。
 
-## 公開鍵の発行
+### 公開鍵の発行
 
 #### リクエスト
 
@@ -32,8 +32,8 @@
 [URI]
 
 | メソッド | URI |
-| --- | --- |
-| POST | /v2.0/appkeys/{appKey}/public-keys/credit-card |
+| -- | --- |
+| GET | /v2.0/appkeys/{appKey}/public-keys/credit-card |
 
 [リクエストヘッダ]
 
@@ -42,8 +42,6 @@
 | Authorization | {secretKey} | コンソールで発行されたセキュリティキー |
 
 [リクエスト本文]
-
-* イメージファイルのバイナリデータを入力します。
 
 ```
 curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-keys/credit-card' \
@@ -86,9 +84,9 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-k
 
 * 公開鍵は **Base64**でエンコードされている状態です。
 
-## クレジットカードAPI
+### クレジットカードAPI
 
-### クレジットカード分析API
+#### クレジットカード分析API
 
 #### リクエスト
 
@@ -108,7 +106,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-k
 | X-Key-Version | {x-key-version} | 発行された公開鍵のバージョン      |
 | Symmetric-Key | {symmetricKey} | 発行された公開鍵で暗号化された対称鍵 |
 
-* {symmetricKey}は必ず**32bit乱数**で作成する必要があります。
+* {symmetricKey}は必ず**32byte乱数**で作成する必要があります。
 * {symmetricKey}は必ず**RSA/ECB/PKCS1Padding**方式で暗号化されている必要があります(公開鍵利用)。
 
 [フィールド]
@@ -118,7 +116,6 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-k
 | image | multipart/form–data | イメージファイル | 対称鍵で暗号化されたイメージ |
 
 * イメージファイルは必ず **AES-256/CBC/PKCS7Padding**方式で暗号化されている必要があります(対称鍵利用)。
-* 対称鍵で暗号化されたイメージファイルのバイナリデータを**Base64**でエンコードして入力します。
 
 [リクエスト本文]
 
