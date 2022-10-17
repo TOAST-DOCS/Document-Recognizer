@@ -44,7 +44,7 @@
 [Request Body]
 
 ```
-curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-keys/credit-card' \
+curl -X GET 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-keys/credit-card' \
 -H 'Authorization: ${secretKey}'
 ```
 
