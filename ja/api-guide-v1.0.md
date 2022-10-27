@@ -18,6 +18,12 @@
 |---|---|---|
 | Authorization | {secretKey} | コンソールで発行されたセキュリティキー |
 
+[Path Variable]
+
+| 이름 | 값 | 설명              |
+| --- | --- |-----------------|
+| appKey | {appKey} | 통합 Appkey 또는 서비스 Appkey |
+
 [リクエスト本文]
 
 - 画像ファイルのBinary Dataを入れます。
@@ -122,6 +128,12 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
 | 名前 | 値 | 説明 |
 |---|---|---|
 | Authorization | {secretKey} | コンソールで発行されたセキュリティキー |
+
+[Path Variable]
+
+| 이름 | 값 | 설명              |
+| --- | --- |-----------------|
+| appKey | {appKey} | 통합 Appkey 또는 서비스 Appkey |
 
 [リクエスト本文]
 

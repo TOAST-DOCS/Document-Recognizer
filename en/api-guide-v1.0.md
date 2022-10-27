@@ -18,6 +18,12 @@
 |---|---|---|
 | Authorization | {secretKey} | Security key issued from the console |
 
+[Path Variable]
+
+| 이름 | 값 | 설명              |
+| --- | --- |-----------------|
+| appKey | {appKey} | 통합 Appkey 또는 서비스 Appkey |
+
 [Request Body]
 
 - Put binary data of the image file.
@@ -122,6 +128,12 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
 | Name | Value | Description |
 |---|---|---|
 | Authorization | {secretKey} | Security key issued from the console |
+
+[Path Variable]
+
+| 이름 | 값 | 설명              |
+| --- | --- |-----------------|
+| appKey | {appKey} | 통합 Appkey 또는 서비스 Appkey |
 
 [Request Body]
 
