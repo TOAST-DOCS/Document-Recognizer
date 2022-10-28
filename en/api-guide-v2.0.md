@@ -40,13 +40,13 @@
 | Name | Value | Description              |
 | --- | --- |-----------------|
 | Authorization | {secretKey} | Security key issued from the console |
-| serviceName | {serviceName} | credit-card(신용카드 API 호출 시 사용할 공개키 발급 시),<br> id-card(신분증 API 호출 시 사용할 공개키 발급 시)  |
 
 [Path Variable]
 
 | 이름 | 값 | 설명              |
 | --- | --- |-----------------|
 | appKey | {appKey} | 통합 Appkey 또는 서비스 Appkey |
+| serviceName | {serviceName} | credit-card(신용카드 API 호출 시 사용할 공개키 발급 시),<br> id-card(신분증 API 호출 시 사용할 공개키 발급 시)  |
 
 [Request Body]
 
@@ -291,7 +291,6 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card'
 
 * **Request-Key를 진위 확인 API 호출에 사용하여 정상 응답을 받은 경우 사용된 Request-Key는 다시 사용할 수 없습니다.**
 * **Request-Key는 발급 이후 1시간 동안 유효하며 그 이후에는 사용할 수 없습니다.**
-
 
 [응답 본문]
 
