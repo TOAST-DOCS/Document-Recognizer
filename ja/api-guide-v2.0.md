@@ -359,7 +359,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card'
 | fileType | String | 파일 확장자(.jpg, .png) |  |
 | resolution | String | 권장 해상도(760\*480px) 이상이면 normal, 권장 해상도 미만은 low |  |
 | idType | String | resident(주민등록증), driver(운전면허증) |  |
-| keyValues | Object |  |  |
+| keyValues | List |  |  |
 | keyValues[0].key | String |  |  |
 | keyValues[0].value | String |  | O |
 | keyValues[0].conf | Double |  |  |
@@ -383,7 +383,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card'
 | **licenseType** | string | 인식된 면허 종류(1종 보통 등)<br>2개 이상일 경우 문자열 내 "/"로 구분 |
 | **name** | string | 인식된 이름 |
 | **residentNumber** | string | 인식된 주민등록번호 |
-| **condition** | string | 인식된 면허 조건<br>(운전면허증에 따라 해당 필드가 존재하지 않는 경우도 존재) |
+| **condition** | string | 인식된 면허 조건<br>(운전면허증에 따라 해당 필드가 존재하지 않는 경우 해당 필드의 value는 none) |
 | **serialNum** | string | 인식된 암호 일련번호 |
 | **issueDate** | string | 인식된 발급 일자 |
 | **issuer** | string | 인식된 발급기관 |
