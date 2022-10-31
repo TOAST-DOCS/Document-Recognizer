@@ -365,7 +365,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card'
 | boxes | List | 인식 영역(Bounding box) 좌표 목록 |
 | boxes[0] | Object  | 인식 영역 좌표 { x1, y1, x2, y2, x3, y3, x4, y4 } |
 
-* **"idType"이 "resident"로 인식될 경우 KeyValues 에 포함되는 목록**
+* **"idType"이 "resident"로 인식될 경우 KeyValues에 포함되는 목록**
 
 | key | value type | description |
 | --- | --- | --- |
@@ -374,7 +374,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card'
 | **issueDate** | string | 인식된 발급 일자 |
 | **issuer** | string | 인식된 발급기관 |
 
-* **"idType"이 "driver"로 인식될 경우 KeyValues 에 포함되는 목록**
+* **"idType"이 "driver"로 인식될 경우 KeyValues에 포함되는 목록**
 
 | key | value type | description |
 | --- | --- | --- | 
