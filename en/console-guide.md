@@ -33,7 +33,7 @@ After uploading the image, click the **Analyze** button and the analysis results
     * [boxes] Coordinate values of the recognized area on the image ({x1, y1, x2, y2, x3, y3, x4, y4} format for each box)
 ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
-    ```
+    ```json
     {
             "success": true,
             "resultMessage": "success",
@@ -104,7 +104,7 @@ After uploading the image, click the **Analyze** button and the analysis results
     * [validThruBox] Coordinate values of the expiration date recognition area on the image
 ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
-    ```
+    ```json
     {
       "fileType": "jpg",
       "resolution": "low",
@@ -174,7 +174,7 @@ After uploading the image, click the **Analyze** button and the analysis results
 
 사진을 업로드한 후 **분석** 버튼을 클릭하면 분석 결과가 화면 오른쪽에 나타납니다.
 
-![ID Card](http://static.toastoven.net/prod_document_ocr/id_card_ocr_console_ko.png)
+![ID Card](http://static.toastoven.net/prod_document_ocr/id_card_ocr_console_en.png)
 
 
 * [텍스트(Key Value)] 분석된 신분증의 내용을 Key/Value 형태로 표시합니다.
@@ -189,7 +189,7 @@ After uploading the image, click the **Analyze** button and the analysis results
     * [boxes] 인식 영역에 대한 이미지 상의 좌표값(box 별 {x1, y1, x2, y2, x3, y3, x4, y4} 형태)
       ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
-    ```
+    ```json
     {
       "fileType": "png",
       "resolution": "low",

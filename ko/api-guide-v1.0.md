@@ -44,7 +44,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
 
 [응답 본문]
 
-```
+```json
 {
     "header": {
         "isSuccessful": true,
@@ -155,7 +155,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/credit-c
 
 [응답 본문]
 
-```
+```json
 {
     "header": {
         "isSuccessful": true,

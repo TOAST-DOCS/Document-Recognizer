@@ -33,7 +33,7 @@
     * [boxes] 인식 영역에 대한 이미지 상의 좌표값(box 별 {x1, y1, x2, y2, x3, y3, x4, y4} 형태)
 ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
-    ```
+    ```json
     {
             "success": true,
             "resultMessage": "success",
@@ -104,7 +104,7 @@
     * [validThruBox] 유효 기간 인식 영역에 대한 이미지 상의 좌표값
 ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
-    ```
+    ```json
     {
       "fileType": "jpg",
       "resolution": "low",
@@ -189,7 +189,7 @@
     * [boxes] 인식 영역에 대한 이미지 상의 좌표값(box 별 {x1, y1, x2, y2, x3, y3, x4, y4} 형태)
       ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
-    ```
+    ```json
     {
       "fileType": "png",
       "resolution": "low",

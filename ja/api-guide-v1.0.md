@@ -44,7 +44,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
 
 [レスポンス本文]
 
-```
+```json
 {
     "header": {
         "isSuccessful": true,
@@ -155,7 +155,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/credit-c
 
 [レスポンス本文]
 
-```
+```json
 {
     "header": {
         "isSuccessful": true,
