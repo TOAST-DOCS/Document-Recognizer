@@ -18,6 +18,12 @@
 |---|---|---|
 | Authorization | {secretKey} | 콘솔에서 발급받은 보안 키 |
 
+[Path Variable]
+
+| 이름 | 값 | 설명              |
+| --- | --- |-----------------|
+| appKey | {appKey} | 통합 Appkey 또는 서비스 Appkey |
+
 [요청 본문]
 
 - 이미지 파일의 Binary Data를 넣습니다.
@@ -38,7 +44,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
 
 [응답 본문]
 
-```
+```json
 {
     "header": {
         "isSuccessful": true,
@@ -123,6 +129,12 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
 |---|---|---|
 | Authorization | {secretKey} | 콘솔에서 발급받은 보안 키 |
 
+[Path Variable]
+
+| 이름 | 값 | 설명              |
+| --- | --- |-----------------|
+| appKey | {appKey} | 통합 Appkey 또는 서비스 Appkey |
+
 [요청 본문]
 
 - 이미지 파일의 Binary Data를 넣습니다.
@@ -143,7 +155,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/credit-c
 
 [응답 본문]
 
-```
+```json
 {
     "header": {
         "isSuccessful": true,
