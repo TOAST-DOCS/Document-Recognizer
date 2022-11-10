@@ -43,10 +43,10 @@
 
 [Path Variable]
 
-| 이름 | 값 | 설명              |
+| Name | Value | Description              |
 | --- | --- |-----------------|
-| appKey | {appKey} | 통합 Appkey 또는 서비스 Appkey |
-| serviceName | {serviceName} | credit-card(신용카드 API 호출 시 사용할 공개 키 발급 시),<br> id-card(신분증 API 호출 시 사용할 공개 키 발급 시)  |
+| appKey | {appKey} | Integrated Appkey or Service Appkey |
+| serviceName | {serviceName} | credit-card (when issuing the public key used for calling the credit card API),<br> id-card (when issuing the public key used for calling the ID card API)  |
 
 [Request Body]
 
@@ -118,9 +118,9 @@ curl -X GET 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-ke
 
 [Path Variable]
 
-| 이름 | 값 | 설명              |
+| Name | Value | Description              |
 | --- | --- |-----------------|
-| appKey | {appKey} | 통합 Appkey 또는 서비스 Appkey |
+| appKey | {appKey} | Integrated Appkey or Service Appkey |
 
 [Field]
 
@@ -234,44 +234,44 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/credit-c
 * boxes[0]
 ![Bounding box](http://static.toastoven.net/prod_document_ocr/bbox.png)
 
-### 신분증 분석 API
+### ID Card Analysis API
 
-#### 요청
+#### Request
 
-* {appKey}와 {secretKey}는 콘솔 상단 **URL &amp; Appkey** 메뉴에서 확인할 수 있습니다.
+* You can find the {appKey} and {secretKey} in the **URL & Appkey** menu at the top of the console.
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 | --- | --- |
 | POST | /v2.0/appkeys/{appKey}/id-card |
 
-[요청 헤더]
+[Request Header]
 
-| 이름 | 값 | 설명 |
+| Name | Value | Description |
 | --- | --- | --- |
-| Authorization | {secretKey} | 콘솔에서 발급 받은 보안 키 |
-| X-Key-Version | {x-key-version} | 발급 받은 공개 키의 버전 |
-| Symmetric-Key | {symmetricKey} | 발급 받은 공개 키로 암호화된 대칭 키 |
+| Authorization | {secretKey} | Security key issued from the console |
+| X-Key-Version | {x-key-version} | Version of the public key issued |
+| Symmetric-Key | {symmetricKey} | Symmetric key encrypted with the issued public key |
 
-* {symmetricKey}는 반드시 **32byte 난수**로 생성해야 합니다.
-* {symmetricKey}는 반드시 **RSA/ECB/PKCS1Padding** 방식으로 암호화되어야 합니다(공개 키 이용).
+* {symmetricKey} must be created as a 32- **byte random number**.
+* {symmetricKey} must be encrypted with the**RSA/ECB/PKCS1Padding** method (using public key).
 
 [Path Variable]
 
-| 이름 | 값 | 설명              |
+| Name | Value | Description              |
 | --- | --- |-----------------|
-| appKey | {appKey} | 통합 Appkey 또는 서비스 Appkey |
+| appKey | {appKey} | Integrated Appkey or Service Appkey |
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 | 암호화 설명 |
+| Name | Type | Description | Encryption Description |
 | --- | --- | --- | --- |
-| image | multipart/form–data | 이미지 파일 | 대칭 키로 암호화된 이미지 |
+| image | multipart/form-data | Image file | Image encrypted with a symmetric key |
 
-* 이미지 파일은 반드시 **AES-256/CBC/PKCS7Padding** 방식으로 암호화되어야 합니다(대칭 키 이용).
+* Image files must be encrypted with the**AES-256/CBC/PKCS7Padding** method (using a symmetric key).
 
-[요청 본문]
+[Request Body]
 
 ```
 curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card' \
@@ -281,18 +281,18 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card'
 -H 'Symmetric-Key: ${symmetricKey}'
 ```
 
-#### 응답
+#### Response
 
-[응답 헤더]
+[Response Header]
 
-| 이름 | 설명 |
+| Name | Description |
 | --- | --- |
-| Request-Key | 신분증 진위 확인 API 호출 시 사용할 Request-Key |
+| Request-Key | Request-Key to be used when calling the Verify Authenticity API |
 
-* **Request-Key를 진위 확인 API 호출에 사용하여 정상 응답을 받은 경우 사용된 Request-Key는 다시 사용할 수 없습니다.**
-* **Request-Key는 발급 이후 1시간 동안 유효하며 그 이후에는 사용할 수 없습니다.**
+* **If you use the Request-Key to make a Authenticity API call and get a normal response, the Request-Key used cannot be reused.**
+* **Request-Key is valid for 1 hour after issuance and cannot be used after that.**
 
-[응답 본문]
+[Response Body]
 
 ```json
 {
@@ -343,98 +343,98 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card'
 }
 ```
 
-[헤더]
+[Header]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | --- | --- | --- |
-| isSuccessful | Boolean | 분석 API 성공 여부 |
-| resultCode | Integer | 결과 코드 |
-| resultMessage | String | 결과 메시지(성공 시 success, 실패 시 오류 내용) |
+| isSuccessful | Boolean | Analysis API success or not |
+| resultCode | Integer | Result code |
+| resultMessage | String | Result message (success on success, error content on failure) |
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 | 암호화 여부 |
+| Name | Type | Description | Whether encrypted or not |
 | --- | --- | --- | --- |
-| fileType | String | 파일 확장자(.jpg, .png) |  |
-| resolution | String | 권장 해상도(760\*480px) 이상이면 normal, 권장 해상도 미만은 low |  |
-| idType | String | resident(주민등록증), driver(운전면허증) |  |
+| fileType | String | File extension (.jpg, .png) |  |
+| resolution | String | normal: the resolution is the recommended resolution (760\*480px) or above, low: the resolution is below the recommended resolution |  |
+| idType | String | resident(resident registration certificate), driver(driver license) |  |
 | keyValues | List |  |  |
 | keyValues[0].key | String |  |  |
 | keyValues[0].value | String |  | O |
 | keyValues[0].conf | Double |  |  |
-| boxes | List | 인식 영역(Bounding box) 좌표 목록 |
-| boxes[0] | Object  | 인식 영역 좌표 { x1, y1, x2, y2, x3, y3, x4, y4 } |
+| boxes | List | List of bounding box coordinates |
+| boxes[0] | Object  | Coordinates of recognized area { x1, y1, x2, y2, x3, y3, x4, y4 } |
 
-* **"idType"이 "resident"로 인식될 경우 KeyValues에 포함되는 목록**
+* **List included in KeyValues when "idType" is recognized as "resident"**
 
 | key | value type | description |
 | --- | --- | --- |
-| **name** | string | 인식된 이름 |
-| **residentNumber** | string | 인식된 주민등록번호 |
-| **issueDate** | string | 인식된 발급 일자 |
-| **issuer** | string | 인식된 발급기관 |
+| **name** | string | Recognized name |
+| **residentNumber** | string | Recognized resident registration number |
+| **issueDate** | string | Recognized issued date |
+| **issuer** | string | Recognized issuer |
 
-* **"idType"이 "driver"로 인식될 경우 KeyValues에 포함되는 목록**
+* **List to be included in KeyValues when "idType" is recognized as "driver"**
 
 | key | value type | description |
 | --- | --- | --- | 
-| **driverLicenseNumber** | string | 인식된 운전면허번호 |
-| **licenseType** | string | 인식된 면허 종류(1종 보통 등)<br>2개 이상일 경우 문자열 내 "/"로 구분 |
-| **name** | string | 인식된 이름 |
-| **residentNumber** | string | 인식된 주민등록번호 |
-| **condition** | string | 인식된 면허 조건<br>(운전면허증에 따라 해당 필드가 존재하지 않는 경우 해당 필드의 value는 none) |
-| **serialNum** | string | 인식된 암호 일련번호 |
-| **issueDate** | string | 인식된 발급 일자 |
-| **issuer** | string | 인식된 발급기관 |
+| **driverLicenseNumber** | string | Recognized driver license number |
+| **licenseType** | string | Recognized driver license type (Class 1 Normal, etc.)<br>When the values are 2 or more, separate them with “/” |
+| **name** | string | Recognized name |
+| **residentNumber** | string | Recognized resident registration number |
+| **condition** | string | Recognized driver license condition<br>(If the field does not exist according to the driver's license, the value of the field is none) |
+| **serialNum** | string | Recognized serial number |
+| **issueDate** | string | Recognized issued date |
+| **issuer** | string | Recognized issuer |
 
-* 암호화된 항목들(keyValues[0].value 등)은 **AES-256/CBC/PKCS7Padding** 방식으로 암호화되어 있습니다(대칭 키 이용).
+* Encrypted items (keyValues[0].value, etc.) are encrypted with the **AES-256/CBC/PKCS7Padding** method (using symmetric key).
 * boxes[0]
   ![Bounding box](http://static.toastoven.net/prod_document_ocr/bbox.png)
 
-### 신분증 진위 확인 API
+### Verify Authenticity API
 
-#### 요청
+#### Request
 
-* {appKey}와 {secretKey}는 콘솔 상단 **URL &amp; Appkey** 메뉴에서 확인할 수 있습니다.
+* You can find the {appKey} and {secretKey} in the **URL & Appkey** menu at the top of the console.
 
 [URI]
 
-| 메서드 | URI |
+| Method | URI |
 | --- | --- |
 | POST | /v2.0/appkeys/{appKey}/id-card/authenticity |
 
-[요청 헤더]
+[Request Header]
 
-| 이름 | 값 | 설명 |
+| Name | Value | Description |
 | --- | --- | --- |
-| Authorization | {secretKey} | 콘솔에서 발급 받은 보안 키 |
-| X-Key-Version | {x-key-version} | 발급 받은 공개 키의 버전 |
-| Symmetric-Key | {symmetricKey} | 발급 받은 공개 키로 암호화된 대칭 키 |
-| Request-Key | {Request-Key} | 신분증 분석 후 발급받은 Request-Key |
+| Authorization | {secretKey} | Security key issued from the console |
+| X-Key-Version | {x-key-version} | Version of the public key issued |
+| Symmetric-Key | {symmetricKey} | Symmetric key encrypted with the issued public key |
+| Request-Key | {Request-Key} | Request-Key issued after ID card analysis |
 
-* {symmetricKey}는 반드시 **32byte 난수**로 생성해야 합니다.
-* {symmetricKey}는 반드시 **RSA/ECB/PKCS1Padding** 방식으로 암호화되어야 합니다(공개 키 이용).
+* {symmetricKey} must be created as a 32- **byte random number**.
+* {symmetricKey} must be encrypted with the**RSA/ECB/PKCS1Padding** method (using public key).
 
 [Path Variable]
 
-| 이름 | 값 | 설명              |
+| Name | Value | Description              |
 | --- | --- |-----------------|
-| appKey | {appKey} | 통합 Appkey 또는 서비스 Appkey |
+| appKey | {appKey} | Integrated Appkey or Service Appkey |
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 | idType | 암호화 여부 |
+| Name | Type | Description | idType | Whether encrypted or not |
 | --- | --- | --- | --- | --- |
-| idType | String | resident(주민등록증), driver(운전면허증) |  | X |
-| name | String | 이름 |  | O |
-| residentNumber | String | 주민등록번호<br>\- resident\(주민등록증\)의 경우 주민등록번호 숫자 13자리<br>\- driver\(운전면허증\)의 경우 주민등록번호 앞 6자리와 뒤 첫 번째 1자리를 조합한 숫자 7자리 |  | O |
-| issueDate | String | 주민등록증 발급 일자(YYYYMMDD) | resident | O |
-| driverLicenseNumber | String | 12자리 운전면허번호 | driver | O |
-| serialNum | String | 5\~6자리 암호 일련번호 | driver | O |
+| idType | String | resident(resident registration certificate), driver(driver license) |  | X |
+| name | String | Name |  | O |
+| residentNumber | String | Resident registration number<br>- For resident (resident registration certificate), 13 digits of resident registration number<br>- For a driver (driver's license), 7 digits that comprise of the first 6 digits and the first 1 digit of  resident registration number |  | O |
+| issueDate | String | Issued date f resident registration certificate (YYYYMMDD) | resident | O |
+| driverLicenseNumber | String | 12 digits of driver license number | driver | O |
+| serialNum | String | 5 and 6 digits of serial number | driver | O |
 
-* 암호화가 필요한 필드는 반드시 **AES-256/CBC/PKCS7Padding** 방식으로 암호화되어야 합니다(대칭 키 이용).
+* A field that requires encryption must be encrypted with the**AES-256/CBC/PKCS7Padding** method (using a symmetric key).
 
-[요청 본문]
+[Request Body]
 
 ```
 curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card/authenticity' \
@@ -452,9 +452,9 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card/
 }'
 ```
 
-#### 응답
+#### Response
 
-[응답 본문]
+[Response Body]
 
 ```json
 {
@@ -469,16 +469,16 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card/
 }
 ```
 
-[헤더]
+[Header]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | --- | --- | --- |
-| isSuccessful | Boolean | 진위 확인 API 성공 여부 |
-| resultCode | Integer | 결과 코드 |
-| resultMessage | String | 결과 메시지(성공 시 success, 실패 시 오류 내용) |
+| isSuccessful | Boolean | Whether the Verify Authenticity API succeeds or not |
+| resultCode | Integer | Result code |
+| resultMessage | String | Result message (success on success, error content on failure) |
 
-[필드]
+[Field]
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | --- | --- | --- |
-| isAuthenticity | Boolean | 진위 여부 |
+| isAuthenticity | Boolean | Whether it is authentic or not |

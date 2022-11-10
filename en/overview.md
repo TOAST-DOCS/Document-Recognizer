@@ -1,7 +1,7 @@
 ## AI Service > Document Recognizer > Overview
 
-Document Recognizer 서비스는 NHN Cloud의 OCR(광학 문자 인식) 기술을 통해 사업자등록증, 신용카드, 신분증의 문자 영역을 인식하고 영역별 문자를 추출하는 기능을 제공합니다. 
-인식된 문서를 DB화하거나 문서 처리 자동화를 구현하는 고객사에서 활용할 수 있습니다. 
+Document Recognizer service provides a feature to recognize the text area of a business registration certificate, credit card, and ID card and extract text for each area, based on NHN Cloud's optical character recognition (OCR) technology.
+It can be used by customers who need to create a database for recognized documents or implement document processing automation. 
 
 ## Business Registration Certificate Analysis
 
@@ -61,39 +61,39 @@ For more accurate credit card analysis, please refer to the guide below.
 
 ![Image Example](http://static.toastoven.net/prod_document_ocr/DocumentRecognizer_ex_img_en.png)
 
-## 신분증 분석
+## Analyze ID Card
 
-### 주요 기능
+### Main Features
 
-* **신분증 문자 영역 인식**
-	* 신분증의 문자 영역(bounding box)을 인식하고, 해당 영역의 좌표를 제공합니다.
+* **Recognition of text areas in an ID card**
+	* Recognizes the text areas (bounding boxes) in an ID card and provides the coordinates of the areas.
 
-* **신분증 주요 데이터 추출 및 분석**
-    * 신분증의 종류(주민등록증/운전면허증)에 따른 주요 데이터는 Key/Value 한 쌍으로 분석되며, 이에 대한 신뢰값(confidence)을 제공합니다.
+* **Extraction and analysis of key data in an ID card**
+    * Key data according to the types of ID cards (resident registration certificate/driver license) is analyzed as a key/value pair, and provides a confidence for it.
 
-* **신분증 진위 확인**
-    * 신분증 이미지 파일에서 추출한 결과를 바탕으로 신분증의 진위를 확인할 수 있습니다.
+* Verify Authenticity
+    * Verifies the authenticity of an ID card based on the result extracted from the image file.
 
-* **분석 결과 다운로드**
-	* 신분증 이미지 파일에서 추출한 결과를 JSON 파일로 다운로드할 수 있습니다.
+* **Analysis results download**
+	* You can download the results extracted from an ID card image file as a JSON file.
 
-### 입력 이미지 가이드
+### Input Image Guide
 
-보다 정확한 신분증 분석을 위해 아래의 가이드를 참고하세요.
+For more accurate ID card analysis, please refer to the guide below.
 
-* 파일 권장 사항
-    * 파일 형식: .jpeg, .png 형식의 이미지 분석 기능을 지원합니다.
-    * 최대 용량: 5MB
-    * 권장 해상도: 760x480
-* 이미지 권장 사항
-    * 평평한 곳에서 최대한 바르게 펴진 상태로 촬영된 이미지를 사용하세요.
-    * 사각 형태의 가득 찬 이미지로 인식하세요.
-    * 카메라 플래시 등으로 인한 빛 반사나 그늘로 인해 글자가 잘 안 보이는 경우 정확한 Key/Value 추출이 어려울 수 있습니다.
-    * 흑백/컬러 이미지에 대해 결과 분석이 가능하지만, 정확한 분석을 위해서 컬러 이미지를 권장합니다.
-    * 신분증(주민등록증/운전면허증)은 한국어에 한해 분석 결과를 제공합니다.
+* File recommendations
+    * File format: Supports analysis of images in .jpeg, .png format.
+    * Maximum size: 5 MB
+    * Recommended resolution: 760x480
+* Image recommendation
+    * Please use an image taken in a condition where the subject has been laid out as straight as possible on a flat surface.
+    * Please make the image recognized as a full image of a rectangular shape.
+    * It might be difficult to extract the correct key/value if the text is difficult to read due to light reflection or shadows caused by the camera flash, etc.
+    * The service supports result analysis for black-and-white and color images, but color images are recommended for accurate analysis.
+    * The service provides analysis results for ID cards (resident registration certificate/driver license) in Korean only.
 
 ## Service Targets
-* 문서(사업자등록증, 신용카드, 신분증)를 자동으로 고객사 시스템에 등록하는 경우
+* When you need to register documents (business registration certificate, credit card, and ID card) in the customer's system automatically
 * When you need to implement document processing automation
 * When you need to build an accounting/financial management automation solution
 
@@ -109,4 +109,4 @@ For more accurate credit card analysis, please refer to the guide below.
 * The customer must adopt the recommended transmission method (dedicated line, IPSecVPN, etc.) to provide secure recognition result data from the Document Recognizer service.
 * The customer must comply with relevant laws such as the Personal Information Protection Act when storing/keeping/managing information recognized by the Document Recognizer service.
 * The company may request evidence from the customer if it is necessary to verify that the customer prepared all of the technical and administrative measures set out above.
-* 위와 같은 사항은 Document Recognizer 서비스를 통하여 고객이 수집/이용하는 정보가 중요한 정보에 해당하기에 고객에게 요청하는 사항입니다.<br>당사는 고객의 요청에 따라 수탁자로서 위탁 받은 범위 내에서 정보를 처리하며, 고객은 정보처리의 주체로서 위 사항의 이행을 보증하고 위반으로 인하여 발생하는 정보주체, 규제기관 등에 대한 모든 책임을 부담하는 것을 확인합니다.
+* We ask for the items above from the customer because the information collected/used by the customer through the Document Recognizer service is important information. <br>We process information within the scope entrusted as a consignee at the request of the customer, and the customer, as the subject of information processing, guarantees the implementation of the above items and bears all responsibilities for the information subject and regulatory agency arising from violation. 
