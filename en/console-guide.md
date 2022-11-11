@@ -41,12 +41,12 @@ After uploading the image, click the **Analyze** button and the analysis results
             "unitType": "pixel",
             "keyValues": [
                 {
-                    "key":"구분",
-                    "value":" 간이과세자",
+                    "key":"Category",
+                    "value":" Simplified tax payer",
                     "conf":0.93
                 },
                 {
-                    "key":"등록번호",
+                    "key":"Registration number",
                     "value":"123-45-67890",
                     "conf":1
                 },
@@ -159,34 +159,34 @@ After uploading the image, click the **Analyze** button and the analysis results
   
 * Provides the feature to copy or download analysis results (JSON).
 
-## 신분증 분석
+## Analyze ID Card
 
 
-### 분석을 위한 사진 업로드
+### Upload an Image for Analysis
 
-분석할 신분증 이미지를 업로드합니다.
+Upload an image of an ID card to analyze.
 
-- 이미지는 다음 2가지 방법으로 업로드할 수 있습니다.
-    1. **이미지 업로드** 버튼 클릭
-    2. 이미지 드래그 앤드 드롭
+- Images can be uploaded in the following two methods:
+    1. Click the **Upload Image** button
+    2. Drag and drop the image
 
-### 분석
+### Analysis
 
-사진을 업로드한 후 **분석** 버튼을 클릭하면 분석 결과가 화면 오른쪽에 나타납니다.
+After uploading the image, click the **Analyze** button and the analysis results will appear on the right side of the screen.
 
 ![ID Card](http://static.toastoven.net/prod_document_ocr/id_card_ocr_console_en.png)
 
 
-* [텍스트(Key Value)] 분석된 신분증의 내용을 Key/Value 형태로 표시합니다.
-* [JSON] 분석한 결과를 JSON 형태로 표시합니다.
-    * [fileType] 파일 확장자(.jpg, .png)
-    * [resolution] 권장 해상도(760*480px) 이상이면 normal, 권장 해상도 미만은 low
-    * [idType] 주민등록증일 때 resident, 운전면허증일 때 driver
-    * [keyValues] 분석 결과
-      * [key] 신분증 내 key에 해당하는 값(이름, 주민등록번호 등)
-      * [value] 특정 key에 해당하는 값
-      * [conf] 분석 결과에 대한 신뢰도
-    * [boxes] 인식 영역에 대한 이미지 상의 좌표값(box 별 {x1, y1, x2, y2, x3, y3, x4, y4} 형태)
+* [Text (Key Value)] Displays the analyzed contents of the credit card in the form of Key/Value.
+* [JSON] Displays the analysis results in JSON format.
+    * [fileType] File extension (.jpg, .png)
+    * [resolution] normal: the resolution is the recommended resolution (760\*480px) or above, low: the resolution is below the recommended resolution
+    * [idType] resident: the ID card is resident
+    * [keyValues] Analysis results
+      * [key] Value corresponding to the key in the ID card (name, resident registration number, etc.)
+      * [value] Value corresponding to a specific key
+      * [conf] Confidence of an analysis result
+    * [boxes] Coordinate values of the recognized area on the image ({x1, y1, x2, y2, x3, y3, x4, y4} format for each box)
       ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
     ```json
@@ -202,12 +202,12 @@ After uploading the image, click the **Analyze** button and the analysis results
         },
         {
           "key": "licenseType",
-          "value": "1종대형/1종보통/1종소형/특수(대형견인,/소형견인,/구난)/2종보통,/2종/소형/원동기",
+      "value": "Class 1 Large/Class 1 Normal/Class 1 Small/Special (Large Towing,/Small Towing,/Rescue)/Class 2/Small/Motor",
           "conf": 0.51
         },
         {
           "key": "name",
-          "value": "홍길순",
+      "value": "Hong Gil Son",
           "conf": 0.94
         },
         ...
@@ -238,12 +238,12 @@ After uploading the image, click the **Analyze** button and the analysis results
     }
     ```
   
-* 분석 결과 복사 및 다운로드(JSON) 기능을 제공합니다.
+* Provides the feature to copy or download analysis results (JSON).
 
-### 수정
+### Modify
 
-신분증을 분석한 이후 분석된 신분증의 내용을 수정할 수 있습니다. **수정** 버튼을 클릭하면 분석된 신분증의 내용을 수정할 수 있습니다. 
+You can modify the content of the ID card after analysis. Click**Modify**to modify the content. 
 
-### 진위 확인
+### Verify Authenticity
 
-신분증을 분석한 이후 분석된 신분증의 내용으로 신분증 진위 확인을 할 수 있습니다. **진위 확인** 버튼을 클릭하면 진위 확인 결과가 버튼 오른쪽에 노출됩니다.
+You can verify the authenticity of the ID card after analysis. Click **Verify authenticity** and the result appears at the right of the button.

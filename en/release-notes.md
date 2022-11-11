@@ -1,7 +1,7 @@
 ## AI Service > Document Recognizer > Release Notes
 
-### 2022. 11. 29.
-* 신분증 분석 기능 추가
+### November 29, 2022
+* Added an ID card analysis feature
 
 ### October 25, 2022
 * Improved the performance of credit card recognition
