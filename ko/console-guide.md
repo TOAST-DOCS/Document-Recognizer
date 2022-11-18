@@ -34,41 +34,41 @@
 ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
 
-    ```json
-    {
-            "success": true,
-            "resultMessage": "success",
-            "fileType": "jpg",
-            "unitType": "pixel",
-            "keyValues": [
-                {
-                    "key":"구분",
-                    "value":" 간이과세자",
-                    "conf":0.93
-                },
-                {
-                    "key":"등록번호",
-                    "value":"123-45-67890",
-                    "conf":1
-                },
-                ...
-            ],
-            "boxes": [
-                {
-                    "x1": 340,
-                    "y1": 3231,
-                    "x2": 523,
-                    "y2": 3231,
-                    "x3": 523,
-                    "y3": 3297,
-                    "x4": 340,
-                    "y4": 3297
-                },
-                ...
-            ],
-            "resolution": "normal"
-        }
-    ```
+```json
+{
+  "success": true,
+  "resultMessage": "success",
+  "fileType": "jpg",
+  "unitType": "pixel",
+  "keyValues": [
+      {
+          "key":"구분",
+          "value":" 간이과세자",
+          "conf":0.93
+      },
+      {
+          "key":"등록번호",
+          "value":"123-45-67890",
+          "conf":1
+      },
+      ...
+  ],
+  "boxes": [
+      {
+          "x1": 340,
+          "y1": 3231,
+          "x2": 523,
+          "y2": 3231,
+          "x3": 523,
+          "y3": 3297,
+          "x4": 340,
+          "y4": 3297
+      },
+      ...
+  ],
+  "resolution": "normal"
+}
+```
   
 * 분석 결과 복사 및 다운로드(Excel, JSON) 기능을 제공합니다.
 
@@ -106,58 +106,58 @@
 ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
 
-    ```json
+```json
+{
+  "fileType": "jpg",
+  "resolution": "low",
+  "cardNums": [
     {
-      "fileType": "jpg",
-      "resolution": "low",
-      "cardNums": [
-        {
-          "value": "1111",
-          "conf": 0.67
-        },
-        {
-          "value": "2222",
-          "conf": 0.66
-        },
-        {
-          "value": "3333",
-          "conf": 0.67
-        },
-        {
-          "value": "4444",
-          "conf": 0.34
-        }
-      ],
-      "totalCardNum": "4330288628448618",
-      "cardNumBoxes": [
-        {
-          "x1": 62,
-          "y1": 256,
-          "x2": 192,
-          "y2": 256,
-          "x3": 192,
-          "y3": 301,
-          "x4": 62,
-          "y4": 301
-        },
-        ...
-      ],
-      "validThru": {
-        "value": "04/19",
-        "conf": 0.53
-      },
-      "validThruBox": {
-        "x1": 316,
-        "y1": 315,
-        "x2": 426,
-        "y2": 315,
-        "x3": 426,
-        "y3": 347,
-        "x4": 316,
-        "y4": 347
-      }
+      "value": "1111",
+      "conf": 0.67
+    },
+    {
+      "value": "2222",
+      "conf": 0.66
+    },
+    {
+      "value": "3333",
+      "conf": 0.67
+    },
+    {
+      "value": "4444",
+      "conf": 0.34
     }
-    ```
+  ],
+  "totalCardNum": "4330288628448618",
+  "cardNumBoxes": [
+    {
+      "x1": 62,
+      "y1": 256,
+      "x2": 192,
+      "y2": 256,
+      "x3": 192,
+      "y3": 301,
+      "x4": 62,
+      "y4": 301
+    },
+    ...
+  ],
+  "validThru": {
+    "value": "04/19",
+    "conf": 0.53
+  },
+  "validThruBox": {
+    "x1": 316,
+    "y1": 315,
+    "x2": 426,
+    "y2": 315,
+    "x3": 426,
+    "y3": 347,
+    "x4": 316,
+    "y4": 347
+  }
+}
+```
   
 * 분석 결과 복사 및 다운로드(JSON) 기능을 제공합니다.
 
@@ -192,54 +192,54 @@
       ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
     
-    ```json
+```json
+{
+  "fileType": "png",
+  "resolution": "low",
+  "idType": "driver",
+  "keyValues": [
     {
-      "fileType": "png",
-      "resolution": "low",
-      "idType": "driver",
-      "keyValues": [
-        {
-          "key": "driverLicenseNumber",
-          "value": "12-34-567890-01",
-          "conf": 0.91
-        },
-        {
-          "key": "licenseType",
-          "value": "1종대형/1종보통/1종소형/특수(대형견인,/소형견인,/구난)/2종보통,/2종/소형/원동기",
-          "conf": 0.51
-        },
-        {
-          "key": "name",
-          "value": "홍길순",
-          "conf": 0.94
-        },
-        ...
-      ],
-      "boxes": [
-        {
-          "x1": 23,
-          "y1": 15,
-          "x2": 65,
-          "y2": 15,
-          "x3": 65,
-          "y3": 28,
-          "x4": 23,
-          "y4": 28
-        },
-        {
-          "x1": 69,
-          "y1": 15,
-          "x2": 112,
-          "y2": 15,
-          "x3": 112,
-          "y3": 28,
-          "x4": 69,
-          "y4": 28
-        },
-        ...
-      ]
-    }
-    ```
+      "key": "driverLicenseNumber",
+      "value": "12-34-567890-01",
+      "conf": 0.91
+    },
+    {
+      "key": "licenseType",
+      "value": "1종대형/1종보통/1종소형/특수(대형견인,/소형견인,/구난)/2종보통,/2종/소형/원동기",
+      "conf": 0.51
+    },
+    {
+      "key": "name",
+      "value": "홍길순",
+      "conf": 0.94
+    },
+    ...
+  ],
+  "boxes": [
+    {
+      "x1": 23,
+      "y1": 15,
+      "x2": 65,
+      "y2": 15,
+      "x3": 65,
+      "y3": 28,
+      "x4": 23,
+      "y4": 28
+    },
+    {
+      "x1": 69,
+      "y1": 15,
+      "x2": 112,
+      "y2": 15,
+      "x3": 112,
+      "y3": 28,
+      "x4": 69,
+      "y4": 28
+    },
+    ...
+  ]
+}
+```
   
 * 분석 결과 복사 및 다운로드(JSON) 기능을 제공합니다.
 
