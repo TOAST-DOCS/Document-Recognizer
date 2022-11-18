@@ -20,9 +20,9 @@
 
 [Path Variable]
 
-| 이름 | 값 | 설명              |
+| 名前 | 値 | 説明           |
 | --- | --- |-----------------|
-| appKey | {appKey} | 통합 Appkey 또는 서비스 Appkey |
+| appKey | {appKey} | 統合AppkeyまたはサービスAppkey |
 
 [リクエスト本文]
 
@@ -131,9 +131,9 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
 
 [Path Variable]
 
-| 이름 | 값 | 설명              |
+| 名前 | 値 | 説明           |
 | --- | --- |-----------------|
-| appKey | {appKey} | 통합 Appkey 또는 서비스 Appkey |
+| appKey | {appKey} | 統合AppkeyまたはサービスAppkey |
 
 [リクエスト本文]
 
