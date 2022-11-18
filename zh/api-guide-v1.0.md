@@ -20,9 +20,9 @@
 
 [Path Variable]
 
-| 이름 | 값 | 설명              |
+| Name | Value | Description              |
 | --- | --- |-----------------|
-| appKey | {appKey} | 통합 Appkey 또는 서비스 Appkey |
+| appKey | {appKey} | Integrated Appkey or Service Appkey |
 
 [Request Body]
 
@@ -131,9 +131,9 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/business
 
 [Path Variable]
 
-| 이름 | 값 | 설명              |
+| Name | Value | Description              |
 | --- | --- |-----------------|
-| appKey | {appKey} | 통합 Appkey 또는 서비스 Appkey |
+| appKey | {appKey} | Integrated Appkey or Service Appkey |
 
 [Request Body]
 
@@ -183,34 +183,33 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/credit-c
                         "conf": 0.89
                     },
                 ],
-                "totalCardNum": "111222233334444",
-                "cardNumBoxes": [
-                    {
-                        "x1": 62,
-                        "y1": 256,
-                        "x2": 192,
-                        "y2": 256,
-                        "x3": 192,
-                        "y3": 301,
-                        "x4": 62,
-                        "y4": 301
-                    },
-                    ...
-                ],
-                "validThru": {
-                    "value": "04/19",
-                    "conf": 0.53
-                },
-                "validThruBox": {
-                    "x1": 316,
-                    "y1": 315,
-                    "x2": 426,
-                    "y2": 315,
-                    "x3": 426,
-                    "y3": 347,
-                    "x4": 316,
-                    "y4": 347
-                }
+        "totalCardNum": "111222233334444",
+        "cardNumBoxes": [
+            {
+                "x1": 62,
+                "y1": 256,
+                "x2": 192,
+                "y2": 256,
+                "x3": 192,
+                "y3": 301,
+                "x4": 62,
+                "y4": 301
+            },
+            ...
+        ],
+        "validThru": {
+            "value": "04/19",
+            "conf": 0.53
+        },
+        "validThruBox": {
+            "x1": 316,
+            "y1": 315,
+            "x2": 426,
+            "y2": 315,
+            "x3": 426,
+            "y3": 347,
+            "x4": 316,
+            "y4": 347
         }
     }
 }

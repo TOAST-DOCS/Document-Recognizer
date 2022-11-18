@@ -1,6 +1,6 @@
 ## AI Service > Document Recognizer > 콘솔 사용 가이드
 
-콘솔을 통해 사업자등록증 파일을 올리고 분석 결과를 얻을 수 있습니다. 
+콘솔에 사업자등록증, 신용 카드, 신분증의 이미지 파일을 올려 분석 결과를 얻을 수 있습니다.
 
 
 ## 사업자등록증 분석
@@ -33,6 +33,7 @@
     * [boxes] 인식 영역에 대한 이미지 상의 좌표값(box 별 {x1, y1, x2, y2, x3, y3, x4, y4} 형태)
 ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
+
     ```json
     {
             "success": true,
@@ -104,6 +105,7 @@
     * [validThruBox] 유효 기간 인식 영역에 대한 이미지 상의 좌표값
 ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
+
     ```json
     {
       "fileType": "jpg",
@@ -189,6 +191,7 @@
     * [boxes] 인식 영역에 대한 이미지 상의 좌표값(box 별 {x1, y1, x2, y2, x3, y3, x4, y4} 형태)
       ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
+    
     ```json
     {
       "fileType": "png",

@@ -171,35 +171,34 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/credit-c
                         "value": "4444",
                         "conf": 0.89
                     },
-                ],
-                "totalCardNum": "111222233334444",
-                "cardNumBoxes": [
-                    {
-                        "x1": 62,
-                        "y1": 256,
-                        "x2": 192,
-                        "y2": 256,
-                        "x3": 192,
-                        "y3": 301,
-                        "x4": 62,
-                        "y4": 301
-                    },
-                    ...
-                ],
-                "validThru": {
-                    "value": "04/19",
-                    "conf": 0.53
-                },
-                "validThruBox": {
-                    "x1": 316,
-                    "y1": 315,
-                    "x2": 426,
-                    "y2": 315,
-                    "x3": 426,
-                    "y3": 347,
-                    "x4": 316,
-                    "y4": 347
-                }
+        ],
+        "totalCardNum": "111222233334444",
+        "cardNumBoxes": [
+            {
+                "x1": 62,
+                "y1": 256,
+                "x2": 192,
+                "y2": 256,
+                "x3": 192,
+                "y3": 301,
+                "x4": 62,
+                "y4": 301
+            },
+            ...
+        ],
+        "validThru": {
+            "value": "04/19",
+            "conf": 0.53
+        },
+        "validThruBox": {
+            "x1": 316,
+            "y1": 315,
+            "x2": 426,
+            "y2": 315,
+            "x3": 426,
+            "y3": 347,
+            "x4": 316,
+            "y4": 347
         }
     }
 }
@@ -427,10 +426,10 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card'
 | --- | --- | --- | --- | --- |
 | idType | String | resident(주민등록증), driver(운전면허증) |  | X |
 | name | String | 이름 |  | O |
-| residentNumber | String | 주민등록번호<br>\- resident\(주민등록증\)의 경우 주민등록번호 숫자 13자리<br>\- driver\(운전면허증\)의 경우 주민등록번호 앞 6자리와 뒤 첫 번째 1자리를 조합한 숫자 7자리 |  | O |
+| residentNumber | String | 주민등록번호<br>- resident(주민등록증)의 경우 주민등록번호 숫자 13자리<br>- driver(운전면허증)의 경우 주민등록번호 앞 6자리와 뒤 첫 번째 1자리를 조합한 숫자 7자리 |  | O |
 | issueDate | String | 주민등록증 발급 일자(YYYYMMDD) | resident | O |
 | driverLicenseNumber | String | 12자리 운전면허번호 | driver | O |
-| serialNum | String | 5\~6자리 암호 일련번호 | driver | O |
+| serialNum | String | 5~6자리 암호 일련번호 | driver | O |
 
 * 암호화가 필요한 필드는 반드시 **AES-256/CBC/PKCS7Padding** 방식으로 암호화되어야 합니다(대칭 키 이용).
 

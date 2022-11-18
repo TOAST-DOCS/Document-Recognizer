@@ -1,6 +1,6 @@
 ## AI Service > Document Recognizer > コンソール使用ガイド
 
-コンソールから事業者登録証ファイルをアップロードして分析結果を取得します。
+コンソールに事業者登録証、クレジットカード、身分証の画像ファイルをアップロードし、分析結果を取得できます。
 
 
 ## 事業者登録証の分析
@@ -33,6 +33,7 @@
     * [boxes]認識領域の画像上の座標値(box別{x1, y1, x2, y2, x3, y3, x4, y4}形式)
 ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
+
     ```json
     {
             "success": true,
@@ -41,12 +42,12 @@
             "unitType": "pixel",
             "keyValues": [
                 {
-                    "key":"区分",
-                    "value":"簡易課税者",
+                    "key":"구분",
+                    "value":" 간이과세자",
                     "conf":0.93
                 },
                 {
-                    "key":"登録番号",
+                    "key":"등록번호",
                     "value":"123-45-67890",
                     "conf":1
                 },
@@ -105,6 +106,7 @@
     * [validThruBox]有効期限認識領域の画像上の座標値
 ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
+
     ```json
     {
       "fileType": "jpg",
@@ -190,6 +192,7 @@
     * [boxes]認識領域の画像上の座標値(box別{x1, y1, x2, y2, x3, y3, x4, y4}形式)
       ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
+    
     ```json
     {
       "fileType": "png",
@@ -203,12 +206,12 @@
         },
         {
           "key": "licenseType",
-          "value": "1種大型/1種普通/1種小型/特殊(大型牽引、/小型牽引、/救難)/2種普通、/2種/小型/原動機",
+          "value": "1종대형/1종보통/1종소형/특수(대형견인,/소형견인,/구난)/2종보통,/2종/소형/원동기",
           "conf": 0.51
         },
         {
           "key": "name",
-          "value": "ホン・ギルスン",
+          "value": "홍길순",
           "conf": 0.94
         },
         ...
