@@ -36,8 +36,6 @@
 
 ```json
 {
-  "success": true,
-  "resultMessage": "success",
   "fileType": "jpg",
   "unitType": "pixel",
   "keyValues": [

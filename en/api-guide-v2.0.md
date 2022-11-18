@@ -113,8 +113,8 @@ curl -X GET 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-ke
 | X-Key-Version | {x-key-version} | Version of the public key issued        |
 | Symmetric-Key | {symmetricKey} | Symmetric key encrypted with the issued public key |
 
-* {symmetricKey} must be created as a 32- **byte random number**.
-* {symmetricKey} must be encrypted with the**RSA/ECB/PKCS1Padding** method (using public key).
+* {symmetricKey} must be created as a **32-byte random number**.
+* {symmetricKey} must be encrypted with the **RSA/ECB/PKCS1Padding** method (using public key).
 
 [Path Variable]
 
@@ -128,7 +128,7 @@ curl -X GET 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/public-ke
 | --- | --- | --- |----------------|
 | image | multipart/form-data | Image file | Image encrypted with a symmetric key |
 
-* Image files must be encrypted with the**AES-256/CBC/PKCS7Padding** method (using a symmetric key).
+* Image files must be encrypted with the **AES-256/CBC/PKCS7Padding** method (using a symmetric key).
 
 [Request Body]
 
@@ -253,8 +253,8 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/credit-c
 | X-Key-Version | {x-key-version} | Version of the public key issued |
 | Symmetric-Key | {symmetricKey} | Symmetric key encrypted with the issued public key |
 
-* {symmetricKey} must be created as a 32- **byte random number**.
-* {symmetricKey} must be encrypted with the**RSA/ECB/PKCS1Padding** method (using public key).
+* {symmetricKey} must be created as a **32-byte random number**.
+* {symmetricKey} must be encrypted with the **RSA/ECB/PKCS1Padding** method (using public key).
 
 [Path Variable]
 
@@ -268,7 +268,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/credit-c
 | --- | --- | --- | --- |
 | image | multipart/form-data | Image file | Image encrypted with a symmetric key |
 
-* Image files must be encrypted with the**AES-256/CBC/PKCS7Padding** method (using a symmetric key).
+* Image files must be encrypted with the **AES-256/CBC/PKCS7Padding** method (using a symmetric key).
 
 [Request Body]
 
@@ -412,8 +412,8 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card'
 | Symmetric-Key | {symmetricKey} | Symmetric key encrypted with the issued public key |
 | Request-Key | {Request-Key} | Request-Key issued after ID card analysis |
 
-* {symmetricKey} must be created as a 32- **byte random number**.
-* {symmetricKey} must be encrypted with the**RSA/ECB/PKCS1Padding** method (using public key).
+* {symmetricKey} must be created as a **32-byte random number**.
+* {symmetricKey} must be encrypted with the **RSA/ECB/PKCS1Padding** method (using public key).
 
 [Path Variable]
 
@@ -432,7 +432,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card'
 | driverLicenseNumber | String | 12 digits of driver license number | driver | O |
 | serialNum | String | 5 and 6 digits of serial number | driver | O |
 
-* A field that requires encryption must be encrypted with the**AES-256/CBC/PKCS7Padding** method (using a symmetric key).
+* A field that requires encryption must be encrypted with the **AES-256/CBC/PKCS7Padding** method (using a symmetric key).
 
 [Request Body]
 

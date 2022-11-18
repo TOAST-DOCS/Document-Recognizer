@@ -181,7 +181,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v1.0/appkeys/{appKey}/credit-c
                     {
                         "value": "4444",
                         "conf": 0.89
-                    },
+                    }
                 ],
         "totalCardNum": "111222233334444",
         "cardNumBoxes": [
