@@ -412,7 +412,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card'
 | Symmetric-Key | {symmetricKey} | 発行された公開鍵で暗号化された対称鍵 |
 | Request-Key | {Request-Key} | 身分証分析後に発行されたRequest-Key |
 
-* {symmetricKey}は必ず**32byteの乱数*で作成する必要があります。
+* {symmetricKey}は必ず**32byteの乱数**で作成する必要があります。
 * {symmetricKey}は必ず**RSA/ECB/PKCS1Padding**方式で暗号化される必要があります(公開鍵利用)。
 
 [Path Variable]
@@ -445,7 +445,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card/
 -H 'Content-Type: application/json' \
 --data-raw '{
   "idType": "driver",
-  "name": "ホン・ギルドン",
+  "name": "홍길동",
   "residentNumber": "8001011",
   "driverLicenseNumber": "112233333344",
   "serialNum": "A1B2C3"
