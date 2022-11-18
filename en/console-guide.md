@@ -1,6 +1,6 @@
 ## AI Service > Document Recognizer > Console User Guide
 
-You can use the console to upload the business registration certificate file and get the analysis results.
+You can get the analysis results by uploading image files of business registration certificates, credit cards, and IDs to the console.
 
 
 ## Business Registration Certificate Analysis
@@ -33,6 +33,7 @@ After uploading the image, click the **Analyze** button and the analysis results
     * [boxes] Coordinate values of the recognized area on the image ({x1, y1, x2, y2, x3, y3, x4, y4} format for each box)
 ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
+
     ```json
     {
             "success": true,
@@ -41,12 +42,12 @@ After uploading the image, click the **Analyze** button and the analysis results
             "unitType": "pixel",
             "keyValues": [
                 {
-                    "key":"Category",
-                    "value":" Simplified tax payer",
+                    "key":"구분",
+                    "value":" 간이과세자",
                     "conf":0.93
                 },
                 {
-                    "key":"Registration number",
+                    "key":"등록번호",
                     "value":"123-45-67890",
                     "conf":1
                 },
@@ -104,6 +105,7 @@ After uploading the image, click the **Analyze** button and the analysis results
     * [validThruBox] Coordinate values of the expiration date recognition area on the image
 ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
+
     ```json
     {
       "fileType": "jpg",
@@ -189,6 +191,7 @@ After uploading the image, click the **Analyze** button and the analysis results
     * [boxes] Coordinate values of the recognized area on the image ({x1, y1, x2, y2, x3, y3, x4, y4} format for each box)
       ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
+    
     ```json
     {
       "fileType": "png",
@@ -202,12 +205,12 @@ After uploading the image, click the **Analyze** button and the analysis results
         },
         {
           "key": "licenseType",
-      "value": "Class 1 Large/Class 1 Normal/Class 1 Small/Special (Large Towing,/Small Towing,/Rescue)/Class 2/Small/Motor",
+          "value": "1종대형/1종보통/1종소형/특수(대형견인,/소형견인,/구난)/2종보통,/2종/소형/원동기",
           "conf": 0.51
         },
         {
           "key": "name",
-      "value": "Hong Gil Son",
+          "value": "홍길순",
           "conf": 0.94
         },
         ...
