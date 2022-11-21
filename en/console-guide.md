@@ -1,6 +1,6 @@
 ## AI Service > Document Recognizer > Console User Guide
 
-You can use the console to upload the business registration certificate file and get the analysis results.
+You can get the analysis results by uploading image files of business registration certificates, credit cards, and IDs to the console.
 
 
 ## Business Registration Certificate Analysis
@@ -33,41 +33,40 @@ After uploading the image, click the **Analyze** button and the analysis results
     * [boxes] Coordinate values of the recognized area on the image ({x1, y1, x2, y2, x3, y3, x4, y4} format for each box)
 ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
-    ```
-    {
-            "success": true,
-            "resultMessage": "success",
-            "fileType": "jpg",
-            "unitType": "pixel",
-            "keyValues": [
-                {
-                    "key":"구분",
-                    "value":" 간이과세자",
-                    "conf":0.93
-                },
-                {
-                    "key":"등록번호",
-                    "value":"123-45-67890",
-                    "conf":1
-                },
-                ...
-            ],
-            "boxes": [
-                {
-                    "x1": 340,
-                    "y1": 3231,
-                    "x2": 523,
-                    "y2": 3231,
-                    "x3": 523,
-                    "y3": 3297,
-                    "x4": 340,
-                    "y4": 3297
-                },
-                ...
-            ],
-            "resolution": "normal"
-        }
-    ```
+
+```json
+{
+  "fileType": "jpg",
+  "unitType": "pixel",
+  "keyValues": [
+      {
+          "key":"구분",
+          "value":" 간이과세자",
+          "conf":0.93
+      },
+      {
+          "key":"등록번호",
+          "value":"123-45-67890",
+          "conf":1
+      },
+      ...
+  ],
+  "boxes": [
+      {
+          "x1": 340,
+          "y1": 3231,
+          "x2": 523,
+          "y2": 3231,
+          "x3": 523,
+          "y3": 3297,
+          "x4": 340,
+          "y4": 3297
+      },
+      ...
+  ],
+  "resolution": "normal"
+}
+```
 
 * Provides the feature to copy or download analysis results (Excel, JSON).
 
@@ -104,57 +103,148 @@ After uploading the image, click the **Analyze** button and the analysis results
     * [validThruBox] Coordinate values of the expiration date recognition area on the image
 ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
     * [JSON Sample]
-    ```
+
+```json
+{
+  "fileType": "jpg",
+  "resolution": "low",
+  "cardNums": [
     {
-      "fileType": "jpg",
-      "resolution": "low",
-      "cardNums": [
-        {
-          "value": "1111",
-          "conf": 0.67
-        },
-        {
-          "value": "2222",
-          "conf": 0.66
-        },
-        {
-          "value": "3333",
-          "conf": 0.67
-        },
-        {
-          "value": "4444",
-          "conf": 0.34
-        }
-      ],
-      "totalCardNum": "4330288628448618",
-      "cardNumBoxes": [
-        {
-          "x1": 62,
-          "y1": 256,
-          "x2": 192,
-          "y2": 256,
-          "x3": 192,
-          "y3": 301,
-          "x4": 62,
-          "y4": 301
-        },
-        ...
-      ],
-      "validThru": {
-        "value": "04/19",
-        "conf": 0.53
-      },
-      "validThruBox": {
-        "x1": 316,
-        "y1": 315,
-        "x2": 426,
-        "y2": 315,
-        "x3": 426,
-        "y3": 347,
-        "x4": 316,
-        "y4": 347
-      }
+      "value": "1111",
+      "conf": 0.67
+    },
+    {
+      "value": "2222",
+      "conf": 0.66
+    },
+    {
+      "value": "3333",
+      "conf": 0.67
+    },
+    {
+      "value": "4444",
+      "conf": 0.34
     }
-    ```
+  ],
+  "totalCardNum": "4330288628448618",
+  "cardNumBoxes": [
+    {
+      "x1": 62,
+      "y1": 256,
+      "x2": 192,
+      "y2": 256,
+      "x3": 192,
+      "y3": 301,
+      "x4": 62,
+      "y4": 301
+    },
+    ...
+  ],
+  "validThru": {
+    "value": "04/19",
+    "conf": 0.53
+  },
+  "validThruBox": {
+    "x1": 316,
+    "y1": 315,
+    "x2": 426,
+    "y2": 315,
+    "x3": 426,
+    "y3": 347,
+    "x4": 316,
+    "y4": 347
+  }
+}
+```
   
 * Provides the feature to copy or download analysis results (JSON).
+
+## Analyze ID Card
+
+
+### Upload an Image for Analysis
+
+Upload an image of an ID card to analyze.
+
+- Images can be uploaded in the following two methods:
+    1. Click the **Upload Image** button
+    2. Drag and drop the image
+
+### Analysis
+
+After uploading the image, click the **Analyze** button and the analysis results will appear on the right side of the screen.
+
+![ID Card](http://static.toastoven.net/prod_document_ocr/id_card_ocr_console_en.png)
+
+
+* [Text (Key Value)] Displays the analyzed contents of the credit card in the form of Key/Value.
+* [JSON] Displays the analysis results in JSON format.
+    * [fileType] File extension (.jpg, .png)
+    * [resolution] normal: the resolution is the recommended resolution (760\*480px) or above, low: the resolution is below the recommended resolution
+    * [idType] resident: the ID card is resident
+    * [keyValues] Analysis results
+      * [key] Value corresponding to the key in the ID card (name, resident registration number, etc.)
+      * [value] Value corresponding to a specific key
+      * [conf] Confidence of an analysis result
+    * [boxes] Coordinate values of the recognized area on the image ({x1, y1, x2, y2, x3, y3, x4, y4} format for each box)
+      ![bbox](http://static.toastoven.net/prod_document_ocr/bbox.png)
+    * [JSON Sample]
+    
+```json
+{
+  "fileType": "png",
+  "resolution": "low",
+  "idType": "driver",
+  "keyValues": [
+    {
+      "key": "driverLicenseNumber",
+      "value": "12-34-567890-01",
+      "conf": 0.91
+    },
+    {
+      "key": "licenseType",
+      "value": "1종대형/1종보통/1종소형/특수(대형견인,/소형견인,/구난)/2종보통,/2종/소형/원동기",
+      "conf": 0.51
+    },
+    {
+      "key": "name",
+      "value": "홍길순",
+      "conf": 0.94
+    },
+    ...
+  ],
+  "boxes": [
+    {
+      "x1": 23,
+      "y1": 15,
+      "x2": 65,
+      "y2": 15,
+      "x3": 65,
+      "y3": 28,
+      "x4": 23,
+      "y4": 28
+    },
+    {
+      "x1": 69,
+      "y1": 15,
+      "x2": 112,
+      "y2": 15,
+      "x3": 112,
+      "y3": 28,
+      "x4": 69,
+      "y4": 28
+    },
+    ...
+  ]
+}
+```
+  
+* Provides the feature to copy or download analysis results (JSON).
+
+### Modify
+
+You can modify the content of the ID card after analysis. Click**Modify**to modify the content. 
+
+### Verify Authenticity
+
+You can verify the authenticity of the ID card after analysis. Click **Verify authenticity** and the result appears at the right of the button.
