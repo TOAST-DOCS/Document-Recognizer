@@ -464,7 +464,7 @@ curl -X POST 'https://ocr.api.nhncloudservice.com/v2.0/appkeys/{appKey}/id-card/
         "resultMessage": "SUCCESS"
     },
     "result": {
-        "isAuthenticity":false
+        "isAuthenticity": false
     }
 }
 ```
