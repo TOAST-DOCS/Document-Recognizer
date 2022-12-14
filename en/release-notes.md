@@ -1,7 +1,7 @@
 ## AI Service > Document Recognizer > Release Notes
 
-### 2022. 12. 27.
-* 신분증 인식 성능 개선
+### December 27, 2022
+* Improved the performance of ID card recognition
 
 ### November 29, 2022
 * Added an ID card analysis feature
