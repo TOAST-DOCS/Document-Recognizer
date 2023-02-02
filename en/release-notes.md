@@ -1,5 +1,8 @@
 ## AI Service > Document Recognizer > Release Notes
 
+### 2023. 02. 28.
+* 사업자등록증 인식 성능 개선
+
 ### December 27, 2022
 * Improved the performance of ID card recognition
 
